@@ -1,0 +1,9 @@
+[color]
+	ui = true
+[user]
+	name = Ilya Timofeev
+	email = il.tmfv@gmail.com
+[gui]
+	spellingdictionary = en
+[remote "origin"]
+	receivepack = git receive-pack
