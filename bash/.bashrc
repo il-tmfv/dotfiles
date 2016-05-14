@@ -144,11 +144,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 export EDITOR='vim'
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
