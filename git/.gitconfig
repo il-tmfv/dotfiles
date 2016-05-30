@@ -7,3 +7,5 @@
 	spellingdictionary = en
 [remote "origin"]
 	receivepack = git receive-pack
+[core]
+	excludesfile = ~/.gitignore_global
