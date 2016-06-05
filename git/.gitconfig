@@ -8,4 +8,12 @@
 [remote "origin"]
 	receivepack = git receive-pack
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/ilyatimofeev/.gitignore_global
+[difftool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
+[commit]
+	template = /Users/ilyatimofeev/.stCommitMsg
