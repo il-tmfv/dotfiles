@@ -33,6 +33,8 @@ alias gsh="git show --color"
 alias gshs="gsh -s"
 alias gshst="gsh --stat"
 alias gbl="git blame --date=short"
+alias gsu="git submodule update"
+alias gsur="git submodule update --remote"
 
 export EDITOR='vim'
 
