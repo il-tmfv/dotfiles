@@ -113,6 +113,13 @@ alias gsh="git show --color"
 alias gshs="gsh -s"
 alias gshst="gsh --stat"
 alias gbl="git blame --date=short"
+alias gp='git push'
+
+# Helper function.
+git_current_branch() {
+  cat "$(git rev-parse --git-dir 2>/dev/null)/HEAD" | sed -e 's/^.*refs\/heads\///'
+}
+alias gpthis='gp --set-upstream origin $(git_current_branch)'
 
 export EDITOR='vim'
 
