@@ -1,19 +1,11 @@
-[color]
-	ui = true
+[gitflow "feature.finish"]
+	no-ff = true
 [user]
 	name = Ilya Timofeev
 	email = il.tmfv@gmail.com
-[gui]
-	spellingdictionary = en
-[remote "origin"]
-	receivepack = git receive-pack
 [core]
-	excludesfile = /Users/ilyatimofeev/.gitignore_global
-[difftool "sourcetree"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-	trustExitCode = true
-[commit]
-	template = /Users/ilyatimofeev/.stCommitMsg
+	autocrlf = input
+[diff]
+	tool = default-difftool
+[difftool "default-difftool"]
+	cmd = code --wait --diff $LOCAL $REMOTE
