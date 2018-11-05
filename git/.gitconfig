@@ -5,6 +5,7 @@
 	email = il.tmfv@gmail.com
 [core]
 	autocrlf = input
+	excludesfile = ~/.gitignore_global
 [diff]
 	tool = default-difftool
 [difftool "default-difftool"]
