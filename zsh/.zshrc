@@ -127,3 +127,4 @@ export EDITOR='vim'
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # for ‘rspec’ instead of ‘bin/rspec’
 export PATH="./bin:$PATH"
+alias jrun=jrun.sh
