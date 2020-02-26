@@ -115,6 +115,7 @@ alias gshst="gsh --stat"
 alias gbl="git blame --date=short"
 alias gp='git push'
 alias lkd='lein kibit $(git diff --name-only)'
+alias gum="git fetch origin master:master"
 
 # Helper function.
 git_current_branch() {
