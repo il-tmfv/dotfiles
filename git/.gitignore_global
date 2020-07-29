@@ -3,3 +3,4 @@
 .vscode/
 .clj-kondo/
 .vagrant/
+*.repl-file
