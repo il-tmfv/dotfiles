@@ -4,3 +4,4 @@
 .clj-kondo/
 .vagrant/
 *.repl-file
+*.repl
