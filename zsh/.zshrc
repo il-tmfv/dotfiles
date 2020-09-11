@@ -124,11 +124,11 @@ git_current_branch() {
 alias gpthis='gp --set-upstream origin $(git_current_branch)'
 
 export EDITOR='vim'
+export DISABLE_SPRING=1
+export HUSKY_SKIP_HOOKS=1
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # for ‘rspec’ instead of ‘bin/rspec’
 export PATH="./bin:$PATH"
-
-export DISABLE_SPRING=1
 
 alias jrun=jrun.sh
