@@ -1,7 +1,7 @@
 *~
 .DS_Store
 .vscode/
-.clj-kondo/
+.clj-kondo/.cache
 .vagrant/
 *.repl-file
 *.repl
