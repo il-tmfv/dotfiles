@@ -6,3 +6,4 @@
 *.repl-file
 *.repl
 *.calva-repl
+.calva/
