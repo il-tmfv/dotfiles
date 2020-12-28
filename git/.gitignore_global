@@ -7,3 +7,4 @@
 *.repl
 *.calva-repl
 .calva/
+.lsp/
