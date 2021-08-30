@@ -8,3 +8,4 @@
 *.calva-repl
 .calva/
 .lsp/
+.solargraph.yml
