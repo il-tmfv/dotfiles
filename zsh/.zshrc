@@ -118,6 +118,12 @@ alias lkd='lein kibit $(git diff --name-only)'
 alias gum="git fetch origin master:master"
 
 # Helper function.
+git_start_new_branch_from_master() {
+  gum && gch -b "$@" master
+}
+alias gsf="git_start_new_branch_from_master"
+
+# Helper function.
 git_current_branch() {
   cat "$(git rev-parse --git-dir 2>/dev/null)/HEAD" | sed -e 's/^.*refs\/heads\///'
 }
