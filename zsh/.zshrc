@@ -116,6 +116,7 @@ alias gbl="git blame --date=short"
 alias gp='git push'
 alias lkd='lein kibit $(git diff --name-only)'
 alias gum="git fetch origin master:master"
+alias grm="git rebase master --autostash"
 
 # Helper function.
 git_start_new_branch_from_master() {
