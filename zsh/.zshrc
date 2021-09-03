@@ -117,6 +117,7 @@ alias gp='git push'
 alias lkd='lein kibit $(git diff --name-only)'
 alias gum="git fetch origin master:master"
 alias grm="gum && git rebase master --autostash"
+alias gmm="gum && git merge master"
 
 # Helper function.
 git_start_new_branch_from_master() {
