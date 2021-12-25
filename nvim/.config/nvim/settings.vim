@@ -1,6 +1,5 @@
 lang en_US.UTF-8
 
-inoremap jj <Esc>
 set list " show invisible characters
 set nohlsearch
 set hidden
@@ -24,8 +23,5 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 
-let mapleader=" "
-
 au BufRead,BufNewFile *.transit setfiletype ruby
 au BufRead,BufNewFile *.yml set filetype yaml
-

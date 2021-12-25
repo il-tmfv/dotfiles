@@ -5,3 +5,5 @@ augroup my-glyph-palette
   autocmd FileType fern call glyph_palette#apply()
   autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
+
+nnoremap <leader>fr <cmd>Fern . -drawer -reveal=%<cr>
