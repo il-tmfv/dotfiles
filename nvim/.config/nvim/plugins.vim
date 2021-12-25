@@ -1,8 +1,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'shaunsingh/nord.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'windwp/nvim-spectre'
 
 Plug 'easymotion/vim-easymotion'
 Plug 'guns/vim-sexp'
