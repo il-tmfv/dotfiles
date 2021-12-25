@@ -1,4 +1,3 @@
-" CoC
 let g:coc_global_extensions = ['coc-solargraph']
 
 inoremap <silent><expr> <TAB>
