@@ -25,6 +25,7 @@ Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
