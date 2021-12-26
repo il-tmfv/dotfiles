@@ -6,4 +6,4 @@ augroup my-glyph-palette
   autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
 
-nnoremap <leader>fr <cmd>Fern . -drawer -reveal=%<cr>
+nnoremap <leader>fr <cmd>Fern . -reveal=%<cr>
