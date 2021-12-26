@@ -4,6 +4,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
+Plug 'luochen1990/rainbow'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -32,6 +33,4 @@ Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'luochen1990/rainbow'
 call plug#end()
