@@ -1,6 +1,5 @@
 lang en_US.UTF-8
 
-set list " show invisible characters
 set nohlsearch
 set hidden
 set noerrorbells

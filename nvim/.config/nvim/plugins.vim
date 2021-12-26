@@ -27,6 +27,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'TimUntersberger/neogit'
 
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'lambdalisue/fern.vim'
