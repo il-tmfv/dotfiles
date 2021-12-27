@@ -4,7 +4,8 @@ require('telescope').setup{
     file_ignore_patterns = {".git/", "node_modules/"},
     mappings = {
       n = {
-        ["q"] = "close"
+        ["q"] = "close",
+        ["<C-d>"] = "delete_buffer",
       }
     }
   },
