@@ -132,7 +132,7 @@ git_current_branch() {
 }
 alias gpthis='gp --set-upstream origin $(git_current_branch)'
 
-export EDITOR='vim'
+export EDITOR='nvim'
 export DISABLE_SPRING=1
 export HUSKY_SKIP_HOOKS=1
 
