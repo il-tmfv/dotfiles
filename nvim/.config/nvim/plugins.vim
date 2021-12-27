@@ -5,6 +5,7 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'luochen1990/rainbow'
+Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
