@@ -135,6 +135,7 @@ alias lkd='lein kibit $(git diff --name-only)'
 alias gum="git fetch origin master:master"
 alias grm="gum && git rebase master --autostash"
 alias gmm="gum && git merge master --autostash"
+alias gkm="git branch | grep -v \"master\" | xargs git branch -D"
 alias ghpr="gh pr create -a @me -w"
 
 # Helper function.
