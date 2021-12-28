@@ -3,7 +3,19 @@ let mapleader=" "
 inoremap jj <Esc>
 
 " window management
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+
+" buffers
+nnoremap <silent> <TAB> :bnext<CR>
+nnoremap <silent> <S-TAB> :bprevious<CR>
+
+" tabbing
+vnoremap < <gv
+vnoremap > >gv
+
+" move selection
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
