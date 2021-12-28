@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-solargraph', 'coc-pairs']
+let g:coc_global_extensions = ['coc-solargraph', 'coc-pairs', 'coc-snippets', 'coc-json']
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
