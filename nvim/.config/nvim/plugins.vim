@@ -24,7 +24,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'cuducos/yaml.nvim'
 
 Plug 'ruanyl/vim-gh-line'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'TimUntersberger/neogit'
 
 Plug 'ntpeters/vim-better-whitespace'
