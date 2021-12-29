@@ -17,6 +17,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
+Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-rails'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
