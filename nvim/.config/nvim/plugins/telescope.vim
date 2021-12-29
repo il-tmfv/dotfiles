@@ -7,7 +7,17 @@ require('telescope').setup{
         ["q"] = "close",
         ["<C-d>"] = "delete_buffer",
       }
-    }
+    },
+    vimgrep_arguments = {
+      "rg",
+      "--hidden",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case"
+    },
   },
   pickers = {
     find_files = {
