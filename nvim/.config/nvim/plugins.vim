@@ -4,7 +4,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
-Plug 'luochen1990/rainbow'
 Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'nvim-lua/plenary.nvim'
@@ -21,6 +20,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-rails'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'p00f/nvim-ts-rainbow'
 Plug 'cuducos/yaml.nvim'
 
 Plug 'ruanyl/vim-gh-line'
