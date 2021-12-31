@@ -16,6 +16,8 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'nicwest/vim-camelsnek'
 
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-rails'
