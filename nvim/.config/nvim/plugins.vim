@@ -10,7 +10,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'windwp/nvim-spectre'
 
-Plug 'easymotion/vim-easymotion'
+Plug 'phaazon/hop.nvim', {'branch': 'v1'}
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-repeat'
