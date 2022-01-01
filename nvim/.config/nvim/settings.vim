@@ -22,6 +22,7 @@ set signcolumn=yes
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+set mouse=a
 
 au BufRead,BufNewFile *.transit setfiletype ruby
 au BufRead,BufNewFile *.yml set filetype yaml
