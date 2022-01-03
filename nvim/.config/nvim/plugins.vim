@@ -1,9 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'shaunsingh/nord.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/glyph-palette.vim'
 Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'nvim-lua/plenary.nvim'
@@ -34,8 +31,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-git-status.vim'
+Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'vim-test/vim-test'
 
