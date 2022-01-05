@@ -4,3 +4,5 @@ require("bufferline").setup({
     diagnostics = "coc"
   }
 })
+
+vim.api.nvim_set_keymap('n', '<leader>bc', '<cmd>BufferLinePickClose<CR>', { noremap = true })
