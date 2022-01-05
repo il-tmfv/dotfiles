@@ -31,7 +31,6 @@ Plug 'TimUntersberger/neogit'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
-Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'vim-test/vim-test'
