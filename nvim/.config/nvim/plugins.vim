@@ -36,13 +36,9 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'vim-test/vim-test'
 
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'folke/trouble.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
+Plug 'ms-jpq/coq_nvim'
+Plug 'ms-jpq/coq.artifacts'
+Plug 'ms-jpq/coq.thirdparty'
 call plug#end()
