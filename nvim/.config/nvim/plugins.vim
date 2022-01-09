@@ -35,6 +35,10 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'vim-test/vim-test'
 
-Plug 'honza/vim-snippets'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'windwp/nvim-autopairs'
+Plug 'folke/trouble.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 call plug#end()
