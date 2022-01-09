@@ -1,7 +1,21 @@
 local nvim_lsp = require('lspconfig')
 
+local signs = {
+  { name = "DiagnosticSignError", text = "" },
+  { name = "DiagnosticSignWarn", text = "" },
+  { name = "DiagnosticSignHint", text = "" },
+  { name = "DiagnosticSignInfo", text = "" },
+}
+
+for _, sign in ipairs(signs) do
+  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+end
+
 vim.diagnostic.config({
   virtual_text = false,
+  signs = {
+    active = signs,
+  },
 })
 
 vim.g.coq_settings = { auto_start = 'shut-up', keymap = { recommended = false, pre_select = true } }
@@ -62,6 +76,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>D',  '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', '<leader>E',  '<cmd>lua vim.diagnostic.open_float({scope = "cursor"})<CR>', opts)
   buf_set_keymap('n', '[g',         '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']g',         '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>f',  '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
