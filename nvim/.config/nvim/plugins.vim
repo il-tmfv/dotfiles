@@ -34,6 +34,8 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'kyazdani42/nvim-tree.lua'
 
+Plug 'akinsho/toggleterm.nvim'
+
 Plug 'vim-test/vim-test'
 
 Plug 'honza/vim-snippets'
