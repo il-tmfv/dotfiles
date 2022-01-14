@@ -7,6 +7,6 @@
 *.repl
 *.calva-repl
 .calva/
-.lsp/
+.lsp/.cache
 .solargraph.yml
 
