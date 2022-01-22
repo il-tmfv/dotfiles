@@ -19,3 +19,6 @@ vnoremap > >gv
 " move selection
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
+
+" open file in external program
+nnoremap gO :!open <cfile><CR>
