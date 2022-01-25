@@ -22,3 +22,6 @@ vnoremap K :m '<-2<cr>gv=gv
 
 " open file in external program
 nnoremap gO :!open <cfile><CR>
+
+" copy text selected with mouse
+vmap <LeftRelease> "*ygv
