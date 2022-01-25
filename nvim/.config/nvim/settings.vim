@@ -26,4 +26,3 @@ set mouse=a
 set termguicolors
 
 au BufRead,BufNewFile *.transit setfiletype ruby
-au BufRead,BufNewFile *.yml set filetype yaml
