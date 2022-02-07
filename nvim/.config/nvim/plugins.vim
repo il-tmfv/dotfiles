@@ -21,6 +21,8 @@ Plug 'nicwest/vim-camelsnek'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-rails'
 
+Plug 'kchmck/vim-coffee-script'
+
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'cuducos/yaml.nvim'
