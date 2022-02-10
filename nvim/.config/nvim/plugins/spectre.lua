@@ -5,3 +5,6 @@ vim.api.nvim_set_keymap("n", "<leader>s", ":lua require('spectre').open_visual()
 
 -- search in current file
 vim.api.nvim_set_keymap("n", "<leader>sp", "viw:lua require('spectre').open_file_search()<cr>", { noremap = true })
+
+-- close spectre panel as window on the left
+vim.api.nvim_set_keymap("n", "<leader>sq", "<C-w>h<cmd>q<CR>", { noremap = true })
