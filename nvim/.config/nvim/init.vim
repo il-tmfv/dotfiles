@@ -1,6 +1,7 @@
 runtime ./settings.vim
 runtime ./plugins.vim
 runtime ./mappings.vim
+runtime ./sessions.vim
 runtime! ./plugins/**/*.*
 
 let g:nord_italic = v:false
