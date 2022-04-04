@@ -2,7 +2,7 @@
 	no-ff = true
 [user]
 	name = Ilya Timofeev
-	email = il.tmfv@gmail.com
+	email = me@tmfv.ru
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
