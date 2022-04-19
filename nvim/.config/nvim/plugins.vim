@@ -40,6 +40,8 @@ Plug 'akinsho/toggleterm.nvim'
 
 Plug 'vim-test/vim-test'
 
+Plug 'Olical/conjure'
+
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
