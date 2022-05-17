@@ -3,9 +3,9 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {"clojure", "ruby", "javascript", "scss", "html", "yaml", "lua", "vim", "markdown"},
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
-  indent = {
-    enable = true,
-  },
+  -- indent = {
+  --   enable = true,
+  -- },
   -- to make it work with rainbow parenths
   highlight = {
     enable = true,
