@@ -7,7 +7,8 @@ Plug 'wfxr/minimap.vim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'windwp/nvim-spectre'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'dyng/ctrlsf.vim'
 
 Plug 'phaazon/hop.nvim', {'branch': 'v1'}
 Plug 'guns/vim-sexp'
