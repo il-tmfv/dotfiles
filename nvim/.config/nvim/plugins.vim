@@ -43,6 +43,8 @@ Plug 'vim-test/vim-test'
 
 Plug 'Olical/conjure'
 
+Plug 'superDross/ticket.vim'
+
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
