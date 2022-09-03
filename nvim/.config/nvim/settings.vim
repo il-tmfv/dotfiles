@@ -1,5 +1,3 @@
-lang en_US.UTF-8
-
 set noshowmode
 set nohlsearch
 set hidden
