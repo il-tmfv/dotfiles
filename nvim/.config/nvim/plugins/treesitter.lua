@@ -14,6 +14,13 @@ require'nvim-treesitter.configs'.setup {
     --   ["constructor"]         = "",
     -- },
   },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      node_incremental = ".",
+      node_decremental = ",",
+    },
+  },
   refactor = {
     smart_rename = { enable = false },
     navigation = { enable = false },
