@@ -26,6 +26,7 @@ Plug 'tpope/vim-rails'
 Plug 'kchmck/vim-coffee-script'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'cuducos/yaml.nvim'
 

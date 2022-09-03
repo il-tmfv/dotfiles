@@ -14,6 +14,15 @@ require'nvim-treesitter.configs'.setup {
     --   ["constructor"]         = "",
     -- },
   },
+  refactor = {
+    smart_rename = { enable = false },
+    navigation = { enable = false },
+    highlight_current_scope = { enable = false },
+    highlight_definitions = {
+      enable = true,
+      clear_on_cursor_move = true,
+    },
+  },
   rainbow = {
     enable = true,
     colors = {
