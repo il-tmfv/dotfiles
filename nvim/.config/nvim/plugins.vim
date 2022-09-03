@@ -7,6 +7,7 @@ Plug 'wfxr/minimap.vim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'dyng/ctrlsf.vim'
 
