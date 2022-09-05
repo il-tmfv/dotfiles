@@ -163,7 +163,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="./bin:$PATH"
 
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@10/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 export PATH="$HOME/projects/deploy:$PATH"
 
 alias jrun=jrun.sh
