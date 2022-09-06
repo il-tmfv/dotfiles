@@ -1,5 +1,5 @@
 let mapleader=" "
-let maplocalleader=","
+let maplocalleader=";"
 
 inoremap jj <Esc>
 
