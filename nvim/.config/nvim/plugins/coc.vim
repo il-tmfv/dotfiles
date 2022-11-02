@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-solargraph', 'coc-pairs', 'coc-snippets', 'coc-json', 'coc-css']
+let g:coc_global_extensions = ['coc-solargraph', 'coc-pairs', 'coc-snippets', 'coc-json', 'coc-css', 'coc-ltex']
 
 " Use <tab> and <S-tab> to navigate completion list: >
 
