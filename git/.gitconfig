@@ -1,8 +1,8 @@
 [gitflow "feature.finish"]
 	no-ff = true
 [user]
-	name = Ilya Timofeev
-	email = me@tmfv.ru
+	name = Тимофеев Илья Игоревич
+	email = ilya.timofeev@sbermarket.ru
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore_global

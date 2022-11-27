@@ -7,4 +7,7 @@ return {
     { '<leader>tl', ':TestLast<CR>', noremap = true, silent = true, desc = 'Test last' },
     { '<leader>tv', ':TestVisit<CR>', noremap = true, silent = true, desc = 'Open the last test file' },
   },
+  config = function()
+    -- vim.g['test#ruby#rspec#executable'] = 'dip rspec'
+  end,
 }

@@ -177,6 +177,7 @@ alias gpthis='gp --set-upstream origin $(git_current_branch)'
 export EDITOR='nvim'
 export DISABLE_SPRING=1
 export HUSKY_SKIP_HOOKS=1
+export LEFTHOOK=0
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # for ‘rspec’ instead of ‘bin/rspec’
@@ -198,3 +199,4 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export DIP_FILE=/Users/timofeev/projects/instamart/dip_front.yml
