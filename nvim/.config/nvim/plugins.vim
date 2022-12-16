@@ -4,6 +4,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'wfxr/minimap.vim'
+Plug 'ThePrimeagen/harpoon'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
