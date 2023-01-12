@@ -178,6 +178,7 @@ export EDITOR='nvim'
 export DISABLE_SPRING=1
 export HUSKY_SKIP_HOOKS=1
 export LEFTHOOK=0
+export SKIP_TEST_COVERAGE=true
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # for ‘rspec’ instead of ‘bin/rspec’
