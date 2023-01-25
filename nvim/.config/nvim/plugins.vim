@@ -21,6 +21,7 @@ Plug 'tpope/vim-commentary'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'nicwest/vim-camelsnek'
+Plug 'ThePrimeagen/refactoring.nvim'
 
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-rails'
