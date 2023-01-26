@@ -9,4 +9,5 @@
 .calva/
 .lsp/.cache
 .solargraph.yml
+tags
 
