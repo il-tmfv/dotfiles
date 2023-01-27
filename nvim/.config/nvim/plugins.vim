@@ -52,4 +52,5 @@ Plug 'Shatur/neovim-session-manager'
 
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
