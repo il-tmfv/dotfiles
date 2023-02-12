@@ -22,6 +22,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'nicwest/vim-camelsnek'
 Plug 'ThePrimeagen/refactoring.nvim'
+Plug 'andymass/vim-matchup'
 
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-rails'
