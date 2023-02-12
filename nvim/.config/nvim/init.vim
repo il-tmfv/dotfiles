@@ -1,6 +1,6 @@
 runtime ./settings.lua
 runtime ./plugins.vim
-runtime ./mappings.vim
+runtime ./mappings.lua
 runtime! ./plugins/**/*.*
 
 let g:nord_italic = v:false
