@@ -23,6 +23,7 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'nicwest/vim-camelsnek'
 Plug 'ThePrimeagen/refactoring.nvim'
 Plug 'andymass/vim-matchup'
+Plug 'junegunn/vim-easy-align'
 
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-rails'
