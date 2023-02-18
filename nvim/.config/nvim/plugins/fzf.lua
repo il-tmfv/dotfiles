@@ -3,7 +3,13 @@ require('fzf-lua').setup{
     preview = {
       horizontal = 'right:50%',
     }
-  }
+  },
+  keymap = {
+    fzf = {
+      ["tab"] = "down",
+      ["shift-tab"] = "up",
+    }
+  },
 }
 vim.api.nvim_set_keymap('n', '<leader>fd', "<cmd>lua require('fzf-lua').tags_grep_cword()<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>/', "<cmd>lua require('fzf-lua').blines()<cr>", { noremap = true, silent = true })
