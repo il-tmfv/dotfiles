@@ -12,6 +12,12 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "Move to previous buffer" }
 )
 
+-- Move to window using the <ctrl> hjkl keys
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+
 -- better indenting
 vim.api.nvim_set_keymap("v", "<", "<gv", { desc = "Move selection to the left" })
 vim.api.nvim_set_keymap("v", ">", ">gv", { desc = "Move selection to the right" })
