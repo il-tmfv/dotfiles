@@ -1,4 +1,5 @@
 runtime ./settings.lua
+runtime ./autocmds.lua
 runtime ./plugins.vim
 runtime ./mappings.lua
 runtime! ./plugins/**/*.*
