@@ -4,6 +4,7 @@ return {
   dependencies = {
     'p00f/nvim-ts-rainbow',
     'cuducos/yaml.nvim',
+    'RRethy/nvim-treesitter-endwise',
   },
   -- lazy = false,
   build = ":TSUpdate",
@@ -49,7 +50,10 @@ return {
       max_file_lines = nil, -- Do not enable for files with more than n lines, int
       -- colors = {}, -- table of hex strings
       -- termcolors = {} -- table of colour name strings
-    }
+    },
+    endwise = {
+      enable = true,
+    },
   },
   config = function(_, opts)
     require("nvim-treesitter.configs").setup(opts)
