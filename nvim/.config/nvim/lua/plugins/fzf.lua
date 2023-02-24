@@ -19,6 +19,7 @@ return {
   },
   keys = {
     { '<leader>fd', "<cmd>lua require('fzf-lua').tags_grep_cword()<cr>", noremap = true, silent = true },
+    { '<leader>fD', "<cmd>lua require('fzf-lua').tags()<cr>", noremap = true, silent = true },
     { '<leader>/', "<cmd>lua require('fzf-lua').blines()<cr>", noremap = true, silent = true },
     { '<leader>fj', "<cmd>lua require('fzf-lua').buffers()<cr>", noremap = true, silent = true },
     { '<leader>ff', "<cmd>lua require('fzf-lua').files()<cr>", noremap = true, silent = true },
