@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ";"
 
-vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true, desc = "keymaps" })
+vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true, desc = "Simulate Esc" })
 
 -- buffers
 vim.api.nvim_set_keymap("n", "<TAB>", "<cmd>bnext<CR>", { noremap = true, silent = true, desc = "Move to next buffer" })
@@ -31,3 +31,24 @@ vim.api.nvim_set_keymap("n", "gO", "<cmd>!open <cfile><CR>", { desc = "Open file
 
 -- copy text selected with mouse
 vim.api.nvim_set_keymap("v", "<LeftRelease>", '"*ygv', { desc = "Copy text selected with mouse" })
+
+-- search without moving cursor
+vim.api.nvim_set_keymap("n", "*", "*``", { desc = "Search without moving cursor" })
+
+-- change word under cursor or visual selection, repeat with .
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>c",
+  [[:let @/='\<'.expand('<cword>').'\>'<CR>cgn]],
+  { noremap = true, silent = true, desc = "Change word under cursor and continue with ." }
+)
+vim.api.nvim_set_keymap(
+  "x",
+  "<leader>c",
+  [["sy:let @/=@s<CR>cgn]],
+  { noremap = true, silent = true, desc = "Change word under cursor and continue with ." }
+)
+
+-- prepares command for replacement
+vim.api.nvim_set_keymap("n", "\\", ":%s///g<Left><Left>", { desc = "Prepares command for replacement" })
+vim.api.nvim_set_keymap("x", "\\", ":s///g<Left><Left>", { desc = "Prepares command for replacement" })
