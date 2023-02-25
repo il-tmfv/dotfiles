@@ -17,7 +17,12 @@ return {
     { '<leader>/', "<cmd>lua require('fzf-lua').blines()<cr>", noremap = true, silent = true },
     { '<leader>fj', "<cmd>lua require('fzf-lua').buffers()<cr>", noremap = true, silent = true },
     { '<leader>ff', "<cmd>lua require('fzf-lua').files()<cr>", noremap = true, silent = true },
-    { '<leader>fg', "<cmd>lua require('fzf-lua').grep_project()<cr>", noremap = true, silent = true },
+    {
+      '<leader>fg',
+      [[<cmd>lua require('fzf-lua').grep_project({ cmd = 'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob "!.git"' })<cr>]],
+      noremap = true,
+      silent = true
+    },
     { '<leader>fw', "<cmd>lua require('fzf-lua').grep_cword()<cr>", noremap = true, silent = true },
     { '<leader>fw', "<cmd>lua require('fzf-lua').grep_visual()<cr>", mode = 'v', noremap = true, silent = true },
   },
