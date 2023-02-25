@@ -1,4 +1,6 @@
-local grep_args = [[ { cmd = 'rg --column --line-number --no-heading --color=always --smart-case --no-ignore --hidden --glob "!{.git,.svn,.hg,CVS,.bzr,vendor,node_modules,dist,venv,elm-stuff,.clj-kondo,.lsp}"' } ]]
+local exclude_files = "!{.git,.svn,.hg,CVS,.bzr,vendor,node_modules,dist,venv,elm-stuff,.clj-kondo,.lsp,tmp}"
+local grep_args = [[ { cmd = 'rg --column --line-number --no-heading --color=always --smart-case --no-ignore --hidden --glob "]] .. exclude_files .. [["' } ]]
+local files_args = [[ { cmd = 'rg --files --follow --no-ignore --hidden --glob "]] .. exclude_files .. [["' } ]]
 
 return {
   'ibhagwan/fzf-lua',
@@ -18,7 +20,12 @@ return {
     { '<leader>fD', "<cmd>lua require('fzf-lua').tags()<cr>", noremap = true, silent = true },
     { '<leader>/', "<cmd>lua require('fzf-lua').blines()<cr>", noremap = true, silent = true },
     { '<leader>fj', "<cmd>lua require('fzf-lua').buffers()<cr>", noremap = true, silent = true },
-    { '<leader>ff', "<cmd>lua require('fzf-lua').files()<cr>", noremap = true, silent = true },
+    {
+      '<leader>ff',
+      "<cmd>lua require('fzf-lua').files(" .. files_args .. ")<cr>",
+      noremap = true,
+      silent = true
+    },
     {
       '<leader>fg',
       "<cmd>lua require('fzf-lua').grep_project(" .. grep_args ..")<cr>",
