@@ -10,12 +10,6 @@ return {
         horizontal = 'right:50%',
       }
     },
-    keymap = {
-      fzf = {
-        ["tab"] = "down",
-        ["shift-tab"] = "up",
-      }
-    },
   },
   keys = {
     { '<leader>fd', "<cmd>lua require('fzf-lua').tags_grep_cword()<cr>", noremap = true, silent = true },
