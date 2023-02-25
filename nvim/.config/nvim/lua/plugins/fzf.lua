@@ -19,7 +19,7 @@ return {
     { '<leader>ff', "<cmd>lua require('fzf-lua').files()<cr>", noremap = true, silent = true },
     {
       '<leader>fg',
-      [[<cmd>lua require('fzf-lua').grep_project({ cmd = 'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob "!.git"' })<cr>]],
+      [[<cmd>lua require('fzf-lua').grep_project({ cmd = 'rg --column --line-number --no-heading --color=always --smart-case --no-ignore --hidden --glob "!{.git,.svn,.hg,CVS,.bzr,vendor,node_modules,dist,venv,elm-stuff,.clj-kondo,.lsp}"' })<cr>]],
       noremap = true,
       silent = true
     },
