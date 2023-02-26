@@ -34,13 +34,13 @@ return {
     },
     {
       '<leader>fw',
-      "<cmd>lua require('fzf-lua').grep_cword(" .. grep_args .. ")<cr>",
+      "*``<cmd>lua require('fzf-lua').grep_cword(" .. grep_args .. ")<cr>",
       noremap = true,
       silent = true
     },
     {
       '<leader>fw',
-      "<cmd>lua require('fzf-lua').grep_visual(" .. grep_args .. ")<cr>",
+      "*``<cmd>lua require('fzf-lua').grep_visual(" .. grep_args .. ")<cr>",
       mode = 'v',
       noremap = true,
       silent = true
