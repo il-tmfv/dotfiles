@@ -87,7 +87,7 @@ return {
       desc = "Replace current word (Spectre)"
     },
     {
-      "<leader>w",
+      "<leader>s",
       function()
         require('spectre').open_visual()
       end,
