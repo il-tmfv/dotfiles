@@ -149,6 +149,25 @@ git_start_new_branch_from_master() {
 }
 alias gsf="git_start_new_branch_from_master"
 
+fzf_git_log_pickaxe() {
+   if [[ $# == 0 ]]; then
+       echo 'Error: search term was not provided.'
+       return
+   fi
+   local selections=$(
+     git log --oneline --color=always -S "$@" |
+       fzf --ansi --no-sort --no-height \
+           --preview "git show --color=always {1}"
+     )
+   if [[ -n $selections ]]; then
+       local commit=$(echo "$selections" | cut -d' ' -f1)
+       local remote=$(git remote -v | head -n 1 | awk -F "@" '{print $2}' | awk -F " " '{print $1}' | sed 's/:/\//g' | sed 's/.git//g' | awk '{print "https://"$1"/commit/"}')
+       open $remote$commit
+   fi
+}
+
+alias gls='fzf_git_log_pickaxe'
+
 # Helper function.
 git_current_branch() {
   cat "$(git rev-parse --git-dir 2>/dev/null)/HEAD" | sed -e 's/^.*refs\/heads\///'
