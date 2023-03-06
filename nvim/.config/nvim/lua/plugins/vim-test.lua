@@ -8,6 +8,6 @@ return {
     { '<leader>tv', ':TestVisit<CR>', noremap = true, silent = true, desc = 'Open the last test file' },
   },
   config = function()
-    vim.g['test#ruby#rspec#executable'] = 'dip SKIP_TEST_COVERAGE=true rspec'
+    -- vim.g['test#ruby#rspec#executable'] = 'dip SKIP_TEST_COVERAGE=true rspec'
   end,
 }
