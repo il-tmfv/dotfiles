@@ -5,7 +5,7 @@ return {
   },
   keys = {
     { '<leader>e', '<cmd>NvimTreeToggle<CR>', noremap = true, desc = 'Toggle NvimTree' },
-    { '<leader>fr', '<cmd>NvimTreeFindFile<CR>', noremap = true, desc = 'Reveal file in NvimTree' },
+    { '<leader>fr', '<cmd>NvimTreeFindFileToggle<CR>', noremap = true, desc = 'Reveal file in NvimTree' },
   },
   opts = {
     disable_netrw       = true,
