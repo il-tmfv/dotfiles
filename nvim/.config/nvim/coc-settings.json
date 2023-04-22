@@ -1,6 +1,50 @@
 {
-  "solargraph.diagnostics": true,
-  "solargraph.formatting": true,
+  "diagnostic-languageserver.trace.server": "verbose",
+  "diagnostic-languageserver.linters": {
+    "rubocop": {
+      "command": "bundle",
+      "sourceName": "rubocop",
+      "debounce": 100,
+      "args": [
+        "exec",
+        "rubocop",
+        "--format",
+        "json",
+        "--force-exclusion",
+        "%filepath"
+      ],
+      "parseJson": {
+        "errorsRoot": "files[0].offenses",
+        "line": "location.line",
+        "column": "location.column",
+        "message": "[${cop_name}] ${message}",
+        "security": "severity"
+      },
+      "securities": {
+        "fatal": "error",
+        "warning": "warning"
+      }
+    }
+  },
+  "diagnostic-languageserver.filetypes": {
+    "ruby": "rubocop"
+  },
+  "diagnostic-languageserver.formatters": {
+    "rubocop": {
+      "command": "bundle",
+      "args": [
+        "exec",
+        "rubocop",
+        "-a",
+        "%filepath"
+      ],
+      "doesWriteToFile": true,
+      "isStdout": false
+    }
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "ruby": "rubocop"
+  },
   "languageserver": {
     "clojure-lsp": {
       "command": "bash",
