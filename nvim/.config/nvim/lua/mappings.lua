@@ -53,3 +53,6 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap("n", [[\\]], [[:%s///g<Left><Left>]], { desc = "Prepares command for replacement" })
 vim.api.nvim_set_keymap("x", [[\\]], [[:s///g<Left><Left>]], { desc = "Prepares command for replacement" })
 vim.api.nvim_set_keymap("n", [[\\\]], ":cdo s///g<Left><Left>", { desc = "Prepares :cdo command for replacement" })
+
+-- command that yanks sber codeowners line
+vim.api.nvim_create_user_command("Codeowners", [[let @" = expand("%") . " @dev-jotunheimr-team"]], { desc = "Yanks current filepath with sber team" })
