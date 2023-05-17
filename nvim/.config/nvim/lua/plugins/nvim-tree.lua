@@ -5,13 +5,11 @@ return {
   },
   keys = {
     { '<leader>e', '<cmd>NvimTreeToggle<CR>', noremap = true, desc = 'Toggle NvimTree' },
-    { '<leader>fr', '<cmd>NvimTreeFindFileToggle<CR>', noremap = true, desc = 'Reveal file in NvimTree' },
+    { '<leader>fr', '<cmd>NvimTreeFindFile<CR>', noremap = true, desc = 'Reveal file in NvimTree' },
   },
   opts = {
     disable_netrw       = true,
     hijack_netrw        = true,
-    open_on_setup       = false,
-    ignore_ft_on_setup  = {},
     open_on_tab         = false,
     hijack_cursor       = false,
     update_cwd          = false,
