@@ -50,6 +50,6 @@ vim.api.nvim_set_keymap(
 )
 
 -- prepares command for replacement
-vim.api.nvim_set_keymap("n", "\\", ":%s///g<Left><Left>", { desc = "Prepares command for replacement" })
-vim.api.nvim_set_keymap("x", "\\", ":s///g<Left><Left>", { desc = "Prepares command for replacement" })
+vim.api.nvim_set_keymap("n", [[\\]], [[:%s///g<Left><Left>]], { desc = "Prepares command for replacement" })
+vim.api.nvim_set_keymap("x", [[\\]], [[:s///g<Left><Left>]], { desc = "Prepares command for replacement" })
 vim.api.nvim_set_keymap("n", [[\\\]], ":cdo s///g<Left><Left>", { desc = "Prepares :cdo command for replacement" })
