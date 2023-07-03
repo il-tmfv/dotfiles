@@ -202,5 +202,6 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-export DIP_FILE=/Users/timofeev/projects/storefront/dip_front.yml
+# export DIP_FILE=/Users/timofeev/projects/storefront/dip_front.yml
+# export MYSQL_DOCKER_IMAGE_VERSION=5.7.34
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
