@@ -138,7 +138,7 @@ alias gum="git fetch origin master:master"
 alias grm="gum && git rebase master --autostash"
 alias gmm="gum && git merge master --autostash"
 alias gkm="git branch | grep -v \"master\" | xargs git branch -D"
-alias gbr='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff {1} --color=always" --pointer="" | xargs git checkout'
+alias gbr='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff master...{1} --color=always" --pointer="" | xargs git checkout'
 # gh extension install davidraviv/gh-clean-branches
 alias gcb="gh clean-branches --verbose"
 alias ghpr="gh pr create -a @me -w"
