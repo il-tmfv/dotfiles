@@ -10,7 +10,7 @@ return {
   build = ":TSUpdate",
   opts = {
     -- A list of parser names, or "all"
-    ensure_installed = {"clojure", "ruby", "javascript", "scss", "html", "yaml", "lua", "vim", "markdown"},
+    ensure_installed = {"clojure", "ruby", "elixir", "javascript", "scss", "html", "yaml", "lua", "vim", "markdown"},
     -- Install languages synchronously (only applied to `ensure_installed`)
     sync_install = false,
     -- indent = {
