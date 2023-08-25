@@ -184,7 +184,7 @@ export PATH="./bin:$PATH"
 
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@11/bin:$PATH"
 export PATH="$HOME/projects/deploy:$PATH"
 
 alias jrun=jrun.sh
@@ -195,6 +195,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
