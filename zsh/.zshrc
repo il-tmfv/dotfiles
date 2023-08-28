@@ -143,11 +143,16 @@ alias gbr='git branch --sort=-committerdate | fzf --header "Checkout Recent Bran
 alias gcb="gh clean-branches --verbose"
 alias ghpr="gh pr create -a @me -w"
 
-# Helper function.
 git_start_new_branch_from_master() {
   gum && gch -b "$@" master
 }
 alias gsf="git_start_new_branch_from_master"
+
+git_squash_all_branch_commits() {
+  git reset --soft $(git merge-base master HEAD)
+  git commit
+}
+alias gsac="git_squash_all_branch_commits"
 
 fzf_git_log_pickaxe() {
    if [[ $# == 0 ]]; then
