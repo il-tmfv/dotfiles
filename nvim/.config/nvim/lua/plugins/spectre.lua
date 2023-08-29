@@ -1,4 +1,4 @@
-local exclude_files = "--glob=!{.git,.svn,.hg,CVS,.bzr,vendor,node_modules,dist,venv,elm-stuff,.clj-kondo,.lsp,tmp,tags}"
+local exclude_files = "--glob=!{.git,.svn,.hg,CVS,.bzr,vendor,node_modules,dist,venv,elm-stuff,.clj-kondo,.lsp,tmp/*,tags}"
 
 return {
   'nvim-pack/nvim-spectre',
