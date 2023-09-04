@@ -1,4 +1,6 @@
 {
+  "html.filetypes": ["html","handlebars","htmldjango","blade","erb","eruby"],
+  "html.format.templating": true,
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "languageserver": {
