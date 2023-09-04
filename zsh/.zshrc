@@ -189,7 +189,7 @@ export PATH="./bin:$PATH"
 
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@11/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
 export PATH="$HOME/projects/deploy:$PATH"
 
 alias jrun=jrun.sh
