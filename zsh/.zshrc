@@ -183,7 +183,6 @@ export EDITOR='nvim'
 export DISABLE_SPRING=1
 export HUSKY_SKIP_HOOKS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
-export NODE_OPTIONS=--openssl-legacy-provider
 
 # for ‘rspec’ instead of ‘bin/rspec’
 export PATH="./bin:$PATH"
