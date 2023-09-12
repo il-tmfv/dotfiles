@@ -3,6 +3,7 @@
   "html.format.templating": true,
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
+  "elixir.pathToElixirLS": "~/projects/elixir-ls/release/language_server.sh",
   "languageserver": {
     "clojure-lsp": {
       "command": "bash",
