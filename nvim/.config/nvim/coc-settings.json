@@ -1,5 +1,5 @@
 {
-  "html.filetypes": ["html","handlebars","htmldjango","blade","erb","eruby"],
+  "html.filetypes": ["html","handlebars","htmldjango","blade","erb","eruby","eelixir"],
   "html.format.templating": true,
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,

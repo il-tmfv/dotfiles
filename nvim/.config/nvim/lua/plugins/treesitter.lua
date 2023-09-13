@@ -13,6 +13,8 @@ return {
       "clojure",
       "ruby",
       "elixir",
+      "heex",
+      "eex",
       "javascript",
       "typescript",
       "tsx",
