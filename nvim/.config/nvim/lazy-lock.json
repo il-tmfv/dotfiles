@@ -1,4 +1,5 @@
 {
+  "auto_mkdir2.vim": { "branch": "master", "commit": "cb337429045d839c399093c86f1331582ce8a548" },
   "bufferline.nvim": { "branch": "main", "commit": "9961d87bb3ec008213c46ba14b3f384a5f520eb5" },
   "coc.nvim": { "branch": "release", "commit": "24984d5f097d43a56f88b2f301465f518d63aa4e" },
   "conjure": { "branch": "master", "commit": "0d9b823db06cc11e6115b54297f690dff10c0299" },
