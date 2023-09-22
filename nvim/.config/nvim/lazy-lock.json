@@ -5,6 +5,7 @@
   "conjure": { "branch": "master", "commit": "0d9b823db06cc11e6115b54297f690dff10c0299" },
   "fzf": { "branch": "master", "commit": "0f50dc848e58b47408713c2c31f2be73287c030a" },
   "fzf-lua": { "branch": "main", "commit": "877ea6a3887877dfe47cdda501ec964c1e25b119" },
+  "git-conflict.nvim": { "branch": "main", "commit": "4e0191c9a0ae05d7fbdcdc7f15cd358f56d23bfb" },
   "gitsigns.nvim": { "branch": "main", "commit": "bf6b0bbc527c546ecd6af2bb9fcd06864ae0852c" },
   "grapple.nvim": { "branch": "main", "commit": "ab274a3bfb674442d57fca05df866b71895853bc" },
   "hop.nvim": { "branch": "v1", "commit": "75f73d3959a0df7ef3642fd5138acdb1ce50fdc8" },
