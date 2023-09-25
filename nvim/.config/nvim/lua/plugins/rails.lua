@@ -1,5 +1,8 @@
 return {
-  'tpope/vim-rails',
+  "tpope/vim-rails",
+  dependencies = {
+    { "tpope/vim-projectionist" }
+  },
   config = function()
     vim.api.nvim_create_user_command("AC", [[execute "e " . eval('rails#buffer().alternate()')]], {})
     vim.api.nvim_create_user_command("FR", [[!bundle exec rubocop -a %]], {})
