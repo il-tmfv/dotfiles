@@ -64,6 +64,9 @@ return {
     keyset("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
     keyset("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
 
+    -- Formating the current buffer
+    keyset("n", "<leader>F", "<Plug>(coc-format)", {silent = true})
+
     -- Apply codeAction to the selected region
     -- Example: `<leader>aap` for current paragraph
     local opts = {silent = true, nowait = true}
@@ -74,8 +77,5 @@ return {
     keyset("n", "<leader>ac", "<Plug>(coc-codeaction)", opts)
     -- Apply the most preferred quickfix action on the current line.
     keyset("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
-
-    -- Add `:Format` command to format current buffer
-    vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
   end
 }
