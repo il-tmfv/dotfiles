@@ -4,6 +4,9 @@
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "elixir.pathToElixirLS": "~/projects/elixir-ls/release/language_server.sh",
+  "snippets.ultisnips.directories": [
+    "UltiSnips"
+  ],
   "languageserver": {
     "clojure-lsp": {
       "command": "bash",
