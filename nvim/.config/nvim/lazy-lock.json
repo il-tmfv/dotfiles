@@ -43,5 +43,6 @@
   "vim-speeddating": { "branch": "master", "commit": "5a36fd29df63ea3f65562bd2bb837be48a5ec90b" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-test": { "branch": "master", "commit": "7585ad2aa2dc8d4ffef0739a02cad8a30d75bfbb" },
+  "vim-translator": { "branch": "master", "commit": "6f0639c6d471a3a90ac19db96e1e379c030f74e3" },
   "yaml.nvim": { "branch": "main", "commit": "400b2edb001b81f41be69bdcbe09a5ed23886074" }
 }
