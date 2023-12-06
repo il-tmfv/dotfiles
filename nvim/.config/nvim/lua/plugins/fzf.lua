@@ -1,4 +1,4 @@
-local exclude_files = "!{.git,.svn,.hg,CVS,.bzr,vendor,node_modules,dist,venv,elm-stuff,.clj-kondo,.lsp,tmp/*,public/packs/*,public/packs-test/*,log/*}"
+local exclude_files = "!{.git,.svn,.hg,CVS,.bzr,vendor,node_modules,dist,venv,elm-stuff,deps,_build,.clj-kondo,assets/node_modules,.lsp,tmp/*,public/packs/*,public/packs-test/*,log/*}"
 local grep_args = [[ { cmd = 'rg --column --line-number --no-heading --color=always --smart-case --no-ignore --hidden --glob "]] .. exclude_files .. [["' } ]]
 local files_args = [[ { cmd = 'rg --files --follow --no-ignore --hidden --glob "]] .. exclude_files .. [["' } ]]
 
