@@ -185,6 +185,8 @@ export DISABLE_SPRING=1
 export HUSKY_SKIP_HOOKS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+export TDLIB_JSON_CLI="priv/tdlib/macos_arm/tdlib_json_cli"
+
 # for ‘rspec’ instead of ‘bin/rspec’
 export PATH="./bin:$PATH"
 
