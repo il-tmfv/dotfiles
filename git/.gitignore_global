@@ -10,4 +10,5 @@
 .lsp/.cache
 .solargraph.yml
 tags
+.notags
 
