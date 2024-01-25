@@ -190,6 +190,7 @@ export TDLIB_JSON_CLI="priv/tdlib/macos_arm/tdlib_json_cli"
 # for ‘rspec’ instead of ‘bin/rspec’
 export PATH="./bin:$PATH"
 
+export PATH="/Users/timofeev/Library/Python/3.11/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
