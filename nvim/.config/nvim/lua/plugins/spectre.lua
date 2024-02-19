@@ -75,7 +75,7 @@ return {
       end,
       noremap = true,
       silent = true,
-      desc = "Replace in files (Spectre)"
+      desc = "Find and Replace in files (Spectre)"
     },
     {
       "<leader>sw",
@@ -84,7 +84,7 @@ return {
       end,
       noremap = true,
       silent = true,
-      desc = "Replace current word (Spectre)"
+      desc = "Find and Replace current word (Spectre)"
     },
     {
       "<leader>s",
@@ -94,7 +94,7 @@ return {
       mode = 'v',
       noremap = true,
       silent = true,
-      desc = "Replace current word (Spectre)"
+      desc = "Find and Replace current word (Spectre)"
     },
   },
 }

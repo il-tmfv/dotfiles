@@ -58,11 +58,11 @@ return {
     keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
 
     -- Symbol renaming
-    keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
+    keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true, desc = "Coc: rename symbol"})
 
     -- Formatting selected code
     keyset("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
-    keyset("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
+    -- keyset("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
 
     -- Formating the current buffer
     keyset("n", "<leader>F", "<Plug>(coc-format)", {silent = true})
