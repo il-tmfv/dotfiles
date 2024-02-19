@@ -21,13 +21,13 @@ return {
     { '<leader>/', "<cmd>lua require('fzf-lua').blines()<cr>", noremap = true, silent = true },
     { '<leader>fj', "<cmd>lua require('fzf-lua').buffers()<cr>", noremap = true, silent = true },
     {
-      '<leader>fr',
+      '<leader>fo',
       "<cmd>lua require('fzf-lua').oldfiles(" .. files_args .. ")<cr>",
       noremap = true,
       silent = true
     },
     {
-      '<leader>fr',
+      '<leader>fc',
       "<cmd>lua require('fzf-lua').resume()<cr>",
       noremap = true,
       silent = true
