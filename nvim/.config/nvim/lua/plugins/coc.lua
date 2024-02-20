@@ -6,7 +6,17 @@ return {
   branch = 'release',
   config = function()
     vim.g.coc_global_extensions =
-      { 'coc-solargraph', 'coc-pairs', 'coc-snippets', 'coc-json', 'coc-css', 'coc-ltex', 'coc-tsserver', 'coc-html', 'coc-elixir' }
+    {
+      'coc-solargraph',
+      'coc-pairs',
+      'coc-snippets',
+      'coc-json',
+      'coc-css',
+      'coc-ltex',
+      'coc-tsserver',
+      'coc-html',
+      'coc-elixir'
+    }
 
     local keyset = vim.keymap.set
     -- Autocomplete
