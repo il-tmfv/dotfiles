@@ -1,4 +1,10 @@
 {
+  "[elixir]": {
+    "coc.preferences.formatOnSave": true,
+  },
+  "[ruby]": {
+    "coc.preferences.formatOnSave": true,
+  },
   "html.filetypes": ["html","handlebars","htmldjango","blade","erb","eruby","eelixir"],
   "html.format.templating": true,
   "solargraph.diagnostics": true,
