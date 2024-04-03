@@ -142,7 +142,7 @@ alias gkm="git branch | grep -v \"master\" | xargs git branch -D"
 alias gbr='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff master...{1} --color=always" --pointer="" | xargs git checkout'
 # gh extension install davidraviv/gh-clean-branches
 alias gcb="gh clean-branches --verbose"
-alias ghpr='gh pr create -a @me -w -l "not finished"'
+alias ghpr="gh pr create -a @me -w"
 
 git_start_new_branch_from_master() {
   gum && gch -b "$@" master
