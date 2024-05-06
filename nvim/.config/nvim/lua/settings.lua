@@ -25,10 +25,7 @@ vim.opt.updatetime = 300
 vim.opt.mouse = "a"
 vim.opt.shortmess:append { W = true, I = true, c = true }
 vim.opt.termguicolors = true
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
-vim.opt.foldnestmax = 3
-vim.opt.foldminlines = 1
-vim.opt.foldtext = [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend))]]
+vim.opt.foldenable = true
 vim.opt.langmap = [[ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>]]
