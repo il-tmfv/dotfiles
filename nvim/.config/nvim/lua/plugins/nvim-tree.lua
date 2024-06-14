@@ -4,8 +4,8 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   keys = {
-    { '<leader>e', '<cmd>NvimTreeToggle<CR>', noremap = true, desc = 'Toggle NvimTree' },
-    { '<leader>fr', '<cmd>NvimTreeFindFile<CR>', noremap = true, desc = 'Reveal file in NvimTree' },
+    { '<leader>E', '<cmd>NvimTreeToggle<CR>', noremap = true, desc = 'Toggle NvimTree' },
+    { '<leader>FR', '<cmd>NvimTreeFindFile<CR>', noremap = true, desc = 'Reveal file in NvimTree' },
   },
   opts = {
     disable_netrw       = true,
