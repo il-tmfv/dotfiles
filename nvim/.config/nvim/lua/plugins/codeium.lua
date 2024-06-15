@@ -1,30 +1,26 @@
 return {
-	"Exafunction/codeium.nvim",
+	"Exafunction/codeium.vim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"hrsh7th/nvim-cmp",
 	},
 	config = function()
-		require("codeium").setup({})
+		vim.g.codeium_disable_bindings = 1
+
+		vim.keymap.set("i", "<C-y>", function()
+			return vim.fn["codeium#Accept"]()
+		end, { expr = true, silent = true })
+
+		vim.keymap.set("n", "<F12>", function()
+			return vim.fn["codeium#Chat"]()
+		end, { expr = true, silent = true, desc = "Start Codeium chat" })
+
+		vim.keymap.set("i", "<C-n>", function()
+			return vim.fn["codeium#CycleCompletions"](1)
+		end, { expr = true, silent = true, desc = "Next Codeium completion" })
+
+		vim.keymap.set("i", "<C-e>", function()
+			return vim.fn["codeium#Clear"]()
+		end, { expr = true, silent = true, desc = "Clear Codeium suggestion" })
 	end,
-	-- config = function ()
-	--   vim.keymap.set(
-	--     'n',
-	--     '<F12>',
-	--     function() return vim.fn['codeium#Chat']() end,
-	--     { expr = true, silent = true, desc = 'Start Codeium chat' }
-	--   )
-	--   vim.keymap.set(
-	--     'i',
-	--     '<F9>',
-	--     function() return vim.fn['codeium#CycleCompletions'](1) end,
-	--     { expr = true, silent = true, desc = 'Next Codeium completion' }
-	--   )
-	--   vim.keymap.set(
-	--     'i',
-	--     '<F10>',
-	--     function() return vim.fn['codeium#Clear']() end,
-	--     { expr = true, silent = true, desc = 'Clear Codeium suggestion' }
-	--   )
-	-- end
 }
