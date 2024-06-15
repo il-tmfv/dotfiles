@@ -27,11 +27,9 @@ return {
 				end,
 			},
 
-			cmp.setup({
-				completion = {
-					completeopt = "menu,menuone,noinsert",
-				},
-			}),
+			completion = {
+				completeopt = "menu,menuone,noinsert",
+			},
 
 			mapping = cmp.mapping.preset.insert({
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -42,13 +40,11 @@ return {
 			}),
 
 			sources = cmp.config.sources({
-				{ name = "codeium" },
 				{ name = "nvim_lsp" },
 				-- { name = 'luasnip' }, -- For luasnip users.
 				{ name = "ultisnips" }, -- For ultisnips users.
-				-- { name = 'snippy' }, -- For snippy users.
-			}, {
 				{ name = "buffer" },
+				-- { name = 'snippy' }, -- For snippy users.
 			}),
 		})
 	end,
