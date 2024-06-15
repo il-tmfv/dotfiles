@@ -163,6 +163,9 @@ return {
 			"stylua", -- Used to format Lua code
 			"solargraph",
 			"elixir-ls",
+			"tsserver",
+			"jsonls",
+			"yamlls",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
