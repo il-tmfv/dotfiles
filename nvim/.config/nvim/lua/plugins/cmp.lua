@@ -41,6 +41,7 @@ return {
 
 			completion = {
 				completeopt = "menu,menuone,noinsert",
+				keyword_length = 10,
 			},
 
 			mapping = cmp.mapping.preset.insert({
