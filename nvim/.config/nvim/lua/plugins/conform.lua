@@ -15,7 +15,7 @@ return {
 		notify_on_error = false,
 		format_on_save = function(bufnr)
 			-- Disable autoformat on certain filetypes
-			local ignore_filetypes = { "sql", "java" }
+			local ignore_filetypes = { "sql", "json" }
 			if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
 				return
 			end
