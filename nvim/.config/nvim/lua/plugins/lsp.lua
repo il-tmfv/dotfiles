@@ -28,6 +28,10 @@ return {
 				-- Find references for the word under your cursor.
 				map("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
 
+				-- Prev/Next diagnostic messages
+				map("[g", vim.diagnostic.goto_prev, "Previous diagnostic message")
+				map("]g", vim.diagnostic.goto_next, "Next diagnostic message")
+
 				-- Jump to the implementation of the word under your cursor.
 				--  Useful when your language has ways of declaring types without an actual implementation.
 				-- map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
