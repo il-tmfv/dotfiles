@@ -5,6 +5,7 @@ return {
 		"hrsh7th/nvim-cmp",
 	},
 	config = function()
+		vim.g.codeium_log_file = "~/.codeium/codeium.log"
 		vim.g.codeium_disable_bindings = 1
 
 		vim.keymap.set("i", "<C-y>", function()
