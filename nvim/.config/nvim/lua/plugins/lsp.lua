@@ -167,6 +167,7 @@ return {
 			"stylua", -- Used to format Lua code
 			"solargraph",
 			"elixir-ls",
+			"css-lsp",
 			"tsserver",
 			"jsonls",
 			"yamlls",
