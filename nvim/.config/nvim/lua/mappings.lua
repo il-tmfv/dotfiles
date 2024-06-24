@@ -1,17 +1,22 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ";"
 
-vim.api.nvim_set_keymap("n", "<leader><leader>", ":wa<CR>", { noremap = true, silent = true, desc = "Quick save all files" })
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader><leader>",
+	":wa<CR>",
+	{ noremap = true, silent = true, desc = "Quick save all files" }
+)
 
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true, desc = "Simulate Esc" })
 
 -- buffers
 vim.api.nvim_set_keymap("n", "<TAB>", "<cmd>bnext<CR>", { noremap = true, silent = true, desc = "Move to next buffer" })
 vim.api.nvim_set_keymap(
-  "n",
-  "<S-TAB>",
-  "<cmd>bprevious<CR>",
-  { noremap = true, silent = true, desc = "Move to previous buffer" }
+	"n",
+	"<S-TAB>",
+	"<cmd>bprevious<CR>",
+	{ noremap = true, silent = true, desc = "Move to previous buffer" }
 )
 
 -- Move to window using the <ctrl> hjkl keys
@@ -39,16 +44,16 @@ vim.api.nvim_set_keymap("n", "*", "*``", { desc = "Search without moving cursor"
 
 -- change word under cursor or visual selection, repeat with .
 vim.api.nvim_set_keymap(
-  "n",
-  "<leader>c",
-  [[:let @/='\<'.expand('<cword>').'\>'<CR>cgn]],
-  { noremap = true, silent = true, desc = "Change word under cursor and continue with ." }
+	"n",
+	"<leader>cw",
+	[[:let @/='\<'.expand('<cword>').'\>'<CR>cgn]],
+	{ noremap = true, silent = true, desc = "Change word under cursor and continue with ." }
 )
 vim.api.nvim_set_keymap(
-  "x",
-  "<leader>c",
-  [["sy:let @/=@s<CR>cgn]],
-  { noremap = true, silent = true, desc = "Change word under cursor and continue with ." }
+	"x",
+	"<leader>cw",
+	[["sy:let @/=@s<CR>cgn]],
+	{ noremap = true, silent = true, desc = "Change word under cursor and continue with ." }
 )
 
 -- prepares command for replacement
