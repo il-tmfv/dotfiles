@@ -39,6 +39,7 @@ return {
 			}
 		end,
 		formatters_by_ft = {
+			eruby = { "erb_format" },
 			lua = { "stylua" },
 			ruby = { "rubocop" },
 			-- Conform can also run multiple formatters sequentially
