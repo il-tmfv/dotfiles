@@ -47,7 +47,7 @@ windows:
       layout: main-vertical
       panes:
         - editor: v
-        - server: NODE_OPTIONS=--openssl-legacy-provider rails s
+        - server: rails s
         - # for console, etc
   - phoenix:
       root: ~/projects/pushsms_api
@@ -58,7 +58,7 @@ windows:
   - misc:
       layout: tiled
       panes:
-        - webpack_server: NODE_OPTIONS=--openssl-legacy-provider ./bin/webpack-dev-server
+        - webpack_server: ./bin/webpack-dev-server
         - rabbit:
           - cd ../pushsms_api
           - rabbitmq-server
