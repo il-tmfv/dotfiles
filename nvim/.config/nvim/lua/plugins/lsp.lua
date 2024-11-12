@@ -168,7 +168,7 @@ return {
 			"solargraph",
 			"elixir-ls",
 			"css-lsp",
-			"tsserver",
+			"ts_ls",
 			"jsonls",
 			"yamlls",
 			"erb-formatter",
