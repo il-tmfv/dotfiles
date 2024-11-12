@@ -74,5 +74,9 @@ return {
 				{ name = "path" },
 			}),
 		})
+
+		cmp.setup.filetype("minifiles", {
+			enabled = false,
+		})
 	end,
 }
