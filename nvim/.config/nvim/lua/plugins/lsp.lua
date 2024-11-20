@@ -166,6 +166,7 @@ return {
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
 			"solargraph",
+			"rubocop",
 			"elixir-ls",
 			"css-lsp",
 			"ts_ls",
