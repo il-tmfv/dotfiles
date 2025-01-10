@@ -14,6 +14,15 @@ return {
 		{ "junegunn/fzf", build = "./install --bin" },
 	},
 	opts = {
+		grep = {
+			rg_glob = true,
+		},
+		keymap = {
+			fzf = {
+				-- use cltr-q to select all items and convert to quickfix list
+				["ctrl-q"] = "select-all+accept",
+			},
+		},
 		winopts = {
 			preview = {
 				horizontal = "right:50%",
@@ -72,7 +81,7 @@ return {
 		},
 		{
 			"<leader>fg",
-			"<cmd>lua require('fzf-lua').grep_project(" .. grep_args .. ")<cr>",
+			"<cmd>lua require('fzf-lua').live_grep_glob(" .. grep_args .. ")<cr>",
 			noremap = true,
 			silent = true,
 			desc = "Fzf in files",
