@@ -47,7 +47,7 @@ windows:
       layout: main-vertical
       panes:
         - editor: v
-        - server: rails s
+        - server: foreman start -f Procfile.dev
         - # for console, etc
   - phoenix:
       root: ~/projects/pushsms_api
@@ -58,7 +58,6 @@ windows:
   - misc:
       layout: tiled
       panes:
-        - webpack_server: ./bin/webpack-dev-server
         - rabbit:
           - cd ../pushsms_api
           - rabbitmq-server
