@@ -42,6 +42,10 @@ return {
 			eruby = { "erb_format" },
 			lua = { "stylua" },
 			ruby = { "rubocop" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			javascriptreact = { "prettier" },
+			typescriptreact = { "prettier" },
 			-- Conform can also run multiple formatters sequentially
 			-- python = { "isort", "black" },
 			--
