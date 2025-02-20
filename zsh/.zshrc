@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/timofeev/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -196,9 +196,7 @@ export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
 export PATH="$HOME/projects/deploy:$PATH"
 
-alias jrun=jrun.sh
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
