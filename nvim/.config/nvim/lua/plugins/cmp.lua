@@ -40,8 +40,8 @@ return {
 			},
 
 			completion = {
-				completeopt = "menu,menuone,noinsert,preview",
-				keyword_length = 3,
+				completeopt = "menu,menuone,noinsert",
+				-- keyword_length = 3,
 			},
 
 			mapping = cmp.mapping.preset.insert({
@@ -67,7 +67,8 @@ return {
 			}),
 
 			sources = cmp.config.sources({
-				{ name = "codeium" },
+				{ name = "supermaven" },
+				-- { name = "codeium" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
