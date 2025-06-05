@@ -67,8 +67,8 @@ return {
 			}),
 
 			sources = cmp.config.sources({
-				{ name = "supermaven" },
-				-- { name = "codeium" },
+				-- { name = "supermaven" },
+				{ name = "codeium" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
