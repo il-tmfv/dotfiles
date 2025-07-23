@@ -55,6 +55,12 @@ windows:
       panes:
         - editor: v
         - server: iex -S mix phx.server
+  - msg_farmer:
+      root: ~/projects/msg_farmer
+      layout: main-vertical
+      panes:
+        - editor: v
+        - server: iex -S mix phx.server
   - misc:
       layout: tiled
       panes:
