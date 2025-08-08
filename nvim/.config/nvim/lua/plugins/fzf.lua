@@ -81,7 +81,7 @@ return {
 		},
 		{
 			"<leader>fg",
-			"<cmd>lua require('fzf-lua').live_grep_glob(" .. grep_args .. ")<cr>",
+			"<cmd>lua require('fzf-lua').live_grep(" .. grep_args .. ")<cr>",
 			noremap = true,
 			silent = true,
 			desc = "Fzf in files",

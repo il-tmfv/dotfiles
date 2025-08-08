@@ -20,6 +20,8 @@ M.exclude_paths = {
 	"public/packs/*",
 	"public/packs-test/*",
 	"public/vite/*",
+	"public/vite-dev/*",
+	"public/vite-test/*",
 	"log/*",
 }
 
