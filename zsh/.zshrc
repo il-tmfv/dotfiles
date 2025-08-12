@@ -195,6 +195,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 export PATH="$HOME/projects/deploy:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
