@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias v="nvim"
+alias vc="nvim $(git ls-files -m -o --exclude-standard)"
 alias tm="tmuxinator"
 
 alias g="git"
