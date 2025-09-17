@@ -18,6 +18,12 @@ vim.api.nvim_set_keymap(
 	"<cmd>bprevious<CR>",
 	{ noremap = true, silent = true, desc = "Move to previous buffer" }
 )
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>a",
+	"<cmd>A<CR>",
+	{ noremap = true, silent = true, desc = "Move to alternate file" }
+)
 
 -- Move to window using the <ctrl> hjkl keys
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
