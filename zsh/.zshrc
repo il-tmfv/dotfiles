@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias v="nvim"
-alias vc="nvim $(git ls-files -m -o --exclude-standard)"
+alias vc='nvim $(git ls-files -m -o --exclude-standard)'
 alias tm="tmuxinator"
 
 alias g="git"
@@ -136,22 +136,23 @@ alias gshst="gsh --stat"
 alias gbl="git blame --date=short"
 alias gp='git push'
 alias lkd='lein kibit $(git diff --name-only)'
-alias gum="git fetch origin master:master"
-alias grm="gum && git rebase master --autostash"
-alias gmm="gum && git merge master --autostash"
-alias gkm="git branch | grep -v \"master\" | xargs git branch -D"
-alias gbr='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff master...{1} --color=always" --pointer="" | xargs git checkout'
+alias gdefb='git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/'
+alias gum='git fetch origin $(gdefb):$(gdefb)'
+alias grm='gum && git rebase $(gdefb) --autostash'
+alias gmm='gum && git merge $(gdefb) --autostash'
+alias gkm='git branch | grep -v "$(gdefb)" | xargs git branch -D'
+alias gbr='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff $(gdefb)...{1} --color=always" --pointer="" | xargs git checkout'
 # gh extension install davidraviv/gh-clean-branches
 alias gcb="gh clean-branches --verbose"
 alias ghpr="gh pr create -a @me -w"
 
 git_start_new_branch_from_master() {
-  gum && gch -b "$@" master
+  gum && gch -b "$@" "$(gdefb)"
 }
 alias gsf="git_start_new_branch_from_master"
 
 git_squash_all_branch_commits() {
-  git reset --soft $(git merge-base master HEAD)
+  git reset --soft "$(git merge-base $(gdefb) HEAD)"
   git commit
 }
 alias gsac="git_squash_all_branch_commits"
