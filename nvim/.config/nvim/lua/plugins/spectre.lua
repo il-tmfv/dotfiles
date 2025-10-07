@@ -3,6 +3,7 @@ local exclude_files = "--glob=!{" .. table.concat(exclude_paths, ",") .. "}"
 
 return {
 	"nvim-pack/nvim-spectre",
+	enabled = false,
 	opts = {
 		default = {
 			find = {
