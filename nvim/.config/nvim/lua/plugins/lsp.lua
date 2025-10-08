@@ -135,7 +135,22 @@ return {
 			-- But for many setups, the LSP (`tsserver`) will work just fine
 			-- tsserver = {},
 			--
-
+			tailwindcss = {
+				filetypes = {
+					"elixir",
+					"css",
+					"eruby",
+					"eruby.yaml",
+					"html",
+					"javascript",
+					"javascriptreact",
+					"less",
+					"sass",
+					"scss",
+					"pug",
+					"typescriptreact",
+				},
+			},
 			emmet_language_server = {
 				filetypes = {
 					"elixir",
@@ -216,6 +231,7 @@ return {
 			"yamlls",
 			"erb-formatter",
 			"emmet_language_server",
+			"tailwindcss",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
