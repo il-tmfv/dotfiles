@@ -1,14 +1,21 @@
 *~
 .DS_Store
+
 .vscode/
-.clj-kondo/.cache
+
 .vagrant/
+
+.clj-kondo/.cache
 *.repl-file
 *.repl
 *.calva-repl
 .calva/
+
 .lsp/.cache
-.solargraph.yml
+
 tags
 .notags
 
+.solargraph.yml
+.gem_rbs_collection
+rbs_collection.*
