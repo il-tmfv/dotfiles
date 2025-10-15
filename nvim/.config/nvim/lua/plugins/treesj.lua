@@ -13,6 +13,6 @@ return {
 		},
 	},
 	config = function()
-		require("treesj").setup({})
+		require("treesj").setup({ use_default_keymaps = true })
 	end,
 }
