@@ -51,13 +51,13 @@ return {
 			silent = true,
 			desc = "Fzf in current buffer",
 		},
-		{
-			"<leader>fj",
-			"<cmd>lua require('fzf-lua').buffers()<cr>",
-			noremap = true,
-			silent = true,
-			desc = "Fzf in opened buffer",
-		},
+		-- {
+		-- 	"<leader>fj",
+		-- 	"<cmd>lua require('fzf-lua').buffers()<cr>",
+		-- 	noremap = true,
+		-- 	silent = true,
+		-- 	desc = "Fzf in opened buffer",
+		-- },
 		{
 			"<leader>fo",
 			"<cmd>lua require('fzf-lua').oldfiles(" .. files_args .. ")<cr>",
