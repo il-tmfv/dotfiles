@@ -7,9 +7,9 @@ return {
 	opts = {
 		options = {
 			icons_enabled = true,
-			theme = "nord",
+			theme = "auto",
 		},
-		sections = {
+		tabline = {
 			lualine_c = {
 				{
 					"filename",
