@@ -1,64 +1,42 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	dependencies = {
-		"cuducos/yaml.nvim",
-		"RRethy/nvim-treesitter-endwise",
-	},
-	branch = "master",
+	branch = "main",
 	lazy = false,
 	build = ":TSUpdate",
-	opts = {
-		-- A list of parser names, or "all"
-		ensure_installed = {
-			"clojure",
-			"ruby",
-			"elixir",
-			"heex",
-			"eex",
-			"javascript",
-			"typescript",
-			"tsx",
-			"scss",
-			"html",
-			"yaml",
-			"lua",
-			"vim",
-			"markdown",
-		},
-		-- Install languages synchronously (only applied to `ensure_installed`)
-		sync_install = false,
-		-- indent = {
-		--   enable = true,
-		-- },
-		-- to make it work with rainbow parenths
-		highlight = {
-			enable = true,
-			-- custom_captures = {
-			--   ["punctuation.bracket"] = "",
-			--   ["constructor"]         = "",
-			-- },
-		},
-		incremental_selection = {
-			enable = true,
-			keymaps = {
-				node_incremental = ".",
-				node_decremental = ",",
+	dependencies = {
+		"MeanderingProgrammer/treesitter-modules.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		opts = {
+			-- A list of parser names, or "all"
+			ensure_installed = {
+				"clojure",
+				"ruby",
+				"elixir",
+				"heex",
+				"eex",
+				"javascript",
+				"typescript",
+				"tsx",
+				"scss",
+				"html",
+				"yaml",
+				"lua",
+				"vim",
+				"markdown",
 			},
-		},
-		refactor = {
-			smart_rename = { enable = false },
-			navigation = { enable = false },
-			highlight_current_scope = { enable = false },
-			highlight_definitions = {
+			-- fold = { enable = true },
+			highlight = { enable = true },
+			incremental_selection = {
 				enable = true,
-				clear_on_cursor_move = true,
+				disable = false,
+				keymaps = {
+					node_incremental = ".",
+					node_decremental = ",",
+				},
 			},
-		},
-		endwise = {
-			enable = true,
+			endwise = {
+				enable = true,
+			},
 		},
 	},
-	config = function(_, opts)
-		require("nvim-treesitter.configs").setup(opts)
-	end,
 }
