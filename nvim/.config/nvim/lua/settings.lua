@@ -14,6 +14,7 @@ vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
+vim.opt.autoread = true
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
 vim.opt.incsearch = true
@@ -23,7 +24,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.cmdheight = 2
 vim.opt.updatetime = 300
 vim.opt.mouse = "a"
-vim.opt.shortmess:append { W = true, I = true, c = true }
+vim.opt.shortmess:append({ W = true, I = true, c = true })
 vim.opt.termguicolors = true
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
