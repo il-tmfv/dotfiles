@@ -66,3 +66,59 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap("n", [[\\]], [[:%s///g<Left><Left>]], { desc = "Prepares command for replacement" })
 vim.api.nvim_set_keymap("x", [[\\]], [[:s///g<Left><Left>]], { desc = "Prepares command for replacement" })
 vim.api.nvim_set_keymap("n", [[\\\]], ":cdo s///g<Left><Left>", { desc = "Prepares :cdo command for replacement" })
+
+-- Copy file name/path/line numbers etc
+local function copy_and_notify(text)
+	vim.fn.setreg("+", text)
+	vim.notify(("Copied: " .. text))
+	return text
+end
+local function copy_filepath_with_line()
+	local filepath = vim.fn.expand("%")
+	local line_number = vim.fn.line(".")
+	local filepath_with_line = ("@" .. filepath .. " on line " .. line_number)
+	return copy_and_notify(filepath_with_line)
+end
+local function copy_file_reference()
+	local filepath = vim.fn.expand("%:p")
+	local line_number = vim.fn.line(".")
+	local filepath_with_line = (filepath .. ":" .. line_number)
+	return copy_and_notify(filepath_with_line)
+end
+local function copy_filepath()
+	local filepath = vim.fn.expand("%")
+	local prefixed = ("@" .. filepath)
+	return copy_and_notify(prefixed)
+end
+local function copy_word_with_filepath()
+	local word = vim.fn.expand("<cword>")
+	local filepath = vim.fn.expand("%:p")
+	local line_number = vim.fn.line(".")
+	local word_with_filepath = ("`" .. word .. "` (@" .. filepath .. " on line " .. line_number .. ")")
+	return copy_and_notify(word_with_filepath)
+end
+local function copy_filepath_with_line_range()
+	local filepath = vim.fn.expand("%")
+	local start_line = vim.fn.getpos("v")[2]
+	local end_line = vim.fn.line(".")
+	local sorted_start = math.min(start_line, end_line)
+	local sorted_end = math.max(start_line, end_line)
+	local filepath_with_range = ("@" .. filepath .. " line " .. sorted_start .. " to " .. sorted_end)
+	return copy_and_notify(filepath_with_range)
+end
+
+local mappings = {
+	{ "n", "<leader>Cr", copy_file_reference, "Copy current file reference" },
+	{ "n", "<leader>Cc", copy_filepath_with_line, "Copy current filepath with line number" },
+	{ "n", "<leader>CC", copy_filepath, "Copy current filepath" },
+	{ "n", "<leader>Cw", copy_word_with_filepath, "Copy word under cursor with filepath and line number" },
+	{ "v", "<leader>Cr", copy_filepath_with_line_range, "Copy filepath with line range" },
+}
+
+for _, mapping in ipairs(mappings) do
+	vim.keymap.set(mapping[1], mapping[2], mapping[3], {
+		noremap = true,
+		silent = true,
+		desc = mapping[4],
+	})
+end
