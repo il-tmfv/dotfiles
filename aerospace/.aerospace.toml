@@ -234,3 +234,15 @@ run = 'move-node-to-workspace T'
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'ru.keepcoder.Telegram'
+run = 'move-node-to-workspace C'
+
+[[on-window-detected]]
+if.app-id = 'chat.rocket'
+run = 'move-node-to-workspace C'
