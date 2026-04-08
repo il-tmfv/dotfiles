@@ -9,6 +9,7 @@ local files_args = [[ { fzf_opts = {["-i"] = true}, cmd = 'rg --files --follow -
 
 return {
 	"ibhagwan/fzf-lua",
+	enabled = false,
 	dependencies = {
 		{ "nvim-tree/nvim-web-devicons" },
 		{ "junegunn/fzf", build = "./install --bin" },
