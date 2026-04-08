@@ -44,7 +44,7 @@ return {
 			desc = "Live fffuzy grep",
 		},
 		{
-			"fc",
+			"fw",
 			function()
 				require("fff").live_grep({ query = vim.fn.expand("<cword>") })
 			end,
