@@ -224,7 +224,7 @@ return {
 			"solargraph",
 			"rubocop",
 			"prettier",
-			"elixir-ls",
+			"expert", -- elixir
 			"css-lsp",
 			"ts_ls",
 			"jsonls",
