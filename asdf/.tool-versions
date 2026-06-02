@@ -1,0 +1,7 @@
+ruby 3.4.1
+nodejs 18.13.0
+yarn 1.22.19
+rabbitmq v3.12.14
+rust 1.89.0
+golang 1.25.1
+uv 0.11.18
