@@ -204,3 +204,10 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(zoxide init zsh)"
+
+# The next line updates PATH for CLI.
+if [ -f '/Users/ilyatimofeev/yandex-cloud/path.bash.inc' ]; then source '/Users/ilyatimofeev/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '/Users/ilyatimofeev/yandex-cloud/completion.zsh.inc' ]; then source '/Users/ilyatimofeev/yandex-cloud/completion.zsh.inc'; fi
+
