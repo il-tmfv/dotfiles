@@ -1,0 +1,200 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "context_servers": {
+    "postgres_production": {
+      "enabled": true,
+      "remote": false,
+      "command": "uvx",
+      "args": ["postgres-mcp@0.3.0", "--access-mode=restricted"],
+      "env": {
+        // how to add a secret:
+        // chezmoi secret keyring set --service=pg_mcp --user=pushsms
+        "DATABASE_URI": {{ keyring "pg_mcp" "pushsms" | quote }},
+        "UV_PYTHON": "python3.13",
+      },
+    },
+    "yandex-tracker": {
+      "enabled": true,
+      "remote": false,
+      "command": "uvx",
+      "args": ["yandex-tracker-mcp@0.7.1"],
+      "env": {
+        "TRACKER_CLOUD_ORG_ID": "bpfoigcnihgavqdi7up0",
+        "TRACKER_TOKEN": {{ keyring "sentry_mcp" "pushsms" | quote }},
+      },
+    },
+    "github": {
+      "enabled": true,
+      "remote": false,
+      // "command": "github-mcp-server",
+      "command": "/Users/ilyatimofeev/.asdf/installs/golang/1.25.1/bin/github-mcp-server",
+      "args": ["stdio", "--read-only"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": {{ keyring "github_mcp" "il-tmfv" | quote }},
+      },
+    },
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+  },
+  "colorize_brackets": true,
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "agent": {
+    "sidebar_side": "right",
+    "default_model": {
+      "provider": "Sber",
+      "model": "zai-org/GLM-5.2",
+      "enable_thinking": false,
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "git_panel": {
+    "tree_view": true,
+    "dock": "left",
+  },
+  "edit_predictions": {
+    "allow_data_collection": "no",
+    "provider": "zed",
+  },
+  "theme": "Catppuccin Frappé",
+  "show_edit_predictions": false,
+  "languages": {
+    "Elixir": {
+      "language_servers": ["dexter", "!elixir-ls", "!expert"],
+    },
+    "EEx": {
+      "language_servers": ["dexter", "!elixir-ls", "!expert"],
+    },
+    "HEEx": {
+      "language_servers": ["dexter", "!elixir-ls", "!expert"],
+    },
+    "YAML": {
+      "show_edit_predictions": false,
+    },
+  },
+  "lsp": {
+    "solargraph": {
+      "initialization_options": {
+        "diagnostics": true,
+        "formatting": true,
+      },
+      "settings": {
+        "use_bundler": false,
+      },
+    },
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "tabs": { "file_icons": true },
+  "language_models": {
+    "openai_compatible": {
+      "Sber": {
+        "api_url": "https://foundation-models.api.cloud.ru/v1",
+        "available_models": [
+          {
+            "name": "moonshotai/Kimi-K2.6",
+            "display_name": "Kimi K2.6",
+            "max_tokens": 262144,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+            },
+          },
+          {
+            "name": "zai-org/GLM-5.2",
+            "display_name": "GLM 5.2",
+            "max_tokens": 202752,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+            },
+          },
+          {
+            "name": "openai/gpt-5.3-codex",
+            "display_name": "Codex 5.3",
+            "max_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+            },
+          },
+        ],
+      },
+      "Yandex": {
+        "api_url": "http://87.242.125.124/yandex-ai/v1",
+        "available_models": [
+          {
+            "name": "deepseek-v4-flash/latest",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+            },
+          },
+          {
+            "name": "qwen3.6-35b-a3b/latest",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+            },
+          },
+        ],
+      },
+    },
+  },
+  "agent_servers": {
+    "cursor": {
+      "default_config_options": {
+        "fast": "false",
+        "model": "composer-2.5",
+      },
+      "type": "registry",
+    },
+  },
+}

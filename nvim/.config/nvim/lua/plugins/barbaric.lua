@@ -1,3 +1,0 @@
-return {
-	"rlue/vim-barbaric",
-}

@@ -1,0 +1,73 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "g ]": "editor::GoToDiagnostic",
+      "g [": "editor::GoToPreviousDiagnostic",
+      "space c a": "editor::ToggleCodeActions",
+      "space r n": "editor::Rename",
+      "space f": "editor::Format",
+      "space s t": "pane::DeploySearch",
+      "g c c": "editor::ToggleComments",
+    },
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j j": "vim::NormalBefore",
+      // to disable for Russian
+      "о о": null,
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "f f": "file_finder::Toggle",
+      "f j": "tab_switcher::Toggle",
+      "f r": "pane::RevealInProjectPanel",
+      "space k": "git_panel::ToggleFocus",
+      "g r": "editor::FindAllReferences",
+    },
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "k": "menu::SelectPrevious",
+      "j": "menu::SelectNext",
+      "d": "tab_switcher::CloseSelectedItem",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+    "bindings": {
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      ".": "editor::SelectLargerSyntaxNode",
+      ",": "editor::SelectSmallerSyntaxNode",
+    },
+  },
+]
