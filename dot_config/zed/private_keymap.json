@@ -45,7 +45,11 @@
       "f j": "tab_switcher::Toggle",
       "f r": "pane::RevealInProjectPanel",
       "space a": "agent::ToggleFocus",
-      "space k": "git_panel::ToggleFocus",
+      // "space k": "git_panel::ToggleFocus",
+      "space k": [
+        "task::Spawn",
+        { "task_name": "start lazygit", "reveal_target": "center" },
+      ],
       "g r": "editor::FindAllReferences",
     },
   },
@@ -74,7 +78,7 @@
   {
     "context": "OutlinePanel && not_editing",
     "bindings": {
-      "cmd-e": "editor::ToggleFocus"
-    }
-  }
+      "cmd-e": "editor::ToggleFocus",
+    },
+  },
 ]
