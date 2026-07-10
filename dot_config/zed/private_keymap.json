@@ -44,6 +44,7 @@
       "f f": "file_finder::Toggle",
       "f j": "tab_switcher::Toggle",
       "f r": "pane::RevealInProjectPanel",
+      "space a": "agent::ToggleFocus",
       "space k": "git_panel::ToggleFocus",
       "g r": "editor::FindAllReferences",
     },
@@ -70,4 +71,10 @@
       ",": "editor::SelectSmallerSyntaxNode",
     },
   },
+  {
+    "context": "OutlinePanel && not_editing",
+    "bindings": {
+      "cmd-e": "editor::ToggleFocus"
+    }
+  }
 ]
