@@ -9,11 +9,11 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "cmd-s": "workspace::SaveAll",
     },
   },
   {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "context": "Editor && VimControl && !VimWaiting && !menu && vim_mode == normal",
     "bindings": {
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPreviousDiagnostic",
@@ -22,25 +22,7 @@
       "space f": "editor::Format",
       "space s t": "pane::DeploySearch",
       "g c c": "editor::ToggleComments",
-    },
-  },
-  {
-    "context": "vim_mode == visual",
-    "bindings": {
-      "shift-s": "vim::PushAddSurrounds",
-    },
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      "j j": "vim::NormalBefore",
-      // to disable for Russian
-      "о о": null,
-    },
-  },
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
+      "space g b": "editor::OpenGitBlameCommit",
       "f f": "file_finder::Toggle",
       "f j": "tab_switcher::Toggle",
       "f r": "pane::RevealInProjectPanel",
@@ -54,11 +36,11 @@
     },
   },
   {
-    "context": "TabSwitcher",
+    "context": "Editor && vim_mode == insert",
     "bindings": {
-      "k": "menu::SelectPrevious",
-      "j": "menu::SelectNext",
-      "d": "tab_switcher::CloseSelectedItem",
+      "j j": "vim::NormalBefore",
+      // to disable for Russian
+      "о о": null,
     },
   },
   {
@@ -66,13 +48,18 @@
     "bindings": {
       "shift-j": "editor::MoveLineDown",
       "shift-k": "editor::MoveLineUp",
+      "shift-s": "vim::PushAddSurrounds",
+      "space g h": "editor::OpenPermalinkToLine",
+      ".": "editor::SelectLargerSyntaxNode",
+      ",": "editor::SelectSmallerSyntaxNode",
     },
   },
   {
-    "context": "Editor && vim_mode == visual",
+    "context": "TabSwitcher",
     "bindings": {
-      ".": "editor::SelectLargerSyntaxNode",
-      ",": "editor::SelectSmallerSyntaxNode",
+      "k": "menu::SelectPrevious",
+      "j": "menu::SelectNext",
+      "d": "tab_switcher::CloseSelectedItem",
     },
   },
   {
