@@ -16,6 +16,8 @@
 tags
 .notags
 
+.scratch/
+
 .solargraph.yml
 .gem_rbs_collection
 rbs_collection.*
