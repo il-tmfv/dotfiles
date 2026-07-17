@@ -17,6 +17,9 @@ tags
 .notags
 
 .scratch/
+docs/agents/domain.md
+docs/agents/issue-tracker.md
+docs/agents/triage-labels.md
 
 .solargraph.yml
 .gem_rbs_collection
