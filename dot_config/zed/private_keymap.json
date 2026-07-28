@@ -52,6 +52,7 @@
       "shift-s": "vim::PushAddSurrounds",
       "space g h": "editor::OpenPermalinkToLine",
       "space c c": "editor::CopyFileLocation",
+      "space f": "editor::FormatSelections",
       ".": "editor::SelectLargerSyntaxNode",
       ",": "editor::SelectSmallerSyntaxNode",
     },
