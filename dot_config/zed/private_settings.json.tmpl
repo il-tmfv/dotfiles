@@ -8,6 +8,9 @@
 // from the command palette or from `Zed` application menu.
 {
   "context_servers": {
+    "figma": {
+       "url": "http://127.0.0.1:3845/mcp"
+    },
     "grafana": {
       // "command": "mcp-grafana",
       "command": "/Users/ilyatimofeev/.asdf/installs/golang/1.25.1/bin/mcp-grafana",
@@ -33,7 +36,7 @@
       "enabled": true,
       "remote": false,
       "command": "uvx",
-      "args": ["yandex-tracker-mcp@0.7.1"],
+      "args": ["yandex-tracker-mcp@0.7.3"],
       "env": {
         "TRACKER_CLOUD_ORG_ID": "bpfoigcnihgavqdi7up0",
         "TRACKER_TOKEN": {{ keyring "sentry_mcp" "pushsms" | quote }},
