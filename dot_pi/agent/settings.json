@@ -1,0 +1,15 @@
+{
+  "lastChangelogVersion": "0.83.0",
+  "theme": "catppuccin-frappe",
+  "packages": [
+    "npm:pi-cursor-sdk",
+    "npm:pi-btw",
+    "npm:@tmustier/pi-ralph-wiggum",
+    "npm:@tmustier/pi-usage-extension",
+    "npm:@diegopetrucci/pi-context-inspector",
+    "npm:@sherif-fanous/pi-catppuccin"
+  ],
+  "defaultThinkingLevel": "medium",
+  "defaultProvider": "cursor",
+  "defaultModel": "grok-4.5:slow"
+}
