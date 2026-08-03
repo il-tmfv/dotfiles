@@ -66,4 +66,4 @@ windows:
       panes:
         - rabbit:
             - cd ../pushsms_api
-            - rabbitmq-server
+            - ASDF_ERLANG_VERSION=27.2.2 rabbitmq-server

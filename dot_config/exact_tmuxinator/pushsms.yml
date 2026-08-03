@@ -48,7 +48,7 @@ windows:
       panes:
         - editor: v
         - server: foreman start -f Procfile.dev
-        - # for console, etc
+        -  # for console, etc
   - phoenix:
       root: ~/projects/pushsms_api
       layout: main-vertical
@@ -65,5 +65,5 @@ windows:
       layout: tiled
       panes:
         - rabbit:
-          - cd ../pushsms_api
-          - rabbitmq-server
+            - cd ../pushsms_api
+            - ASDF_ERLANG_VERSION=27.2.2 rabbitmq-server
