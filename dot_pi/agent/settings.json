@@ -9,7 +9,7 @@
     "npm:@diegopetrucci/pi-context-inspector",
     "npm:@sherif-fanous/pi-catppuccin"
   ],
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "high",
   "defaultProvider": "cursor",
   "defaultModel": "grok-4.5:slow"
 }

@@ -10,6 +10,7 @@
   "context_servers": {
     "figma": {
        "url": "http://127.0.0.1:3845/mcp"
+      "url": "http://127.0.0.1:3845/mcp",
     },
     "grafana": {
       // "command": "mcp-grafana",
@@ -24,7 +25,12 @@
       "enabled": true,
       "remote": false,
       "command": "uvx",
-      "args": ["postgres-mcp@0.3.0", "--access-mode=restricted"],
+      "args": [
+        "--with",
+        "mcp>=1.5.0,<2",
+        "postgres-mcp@0.3.0",
+        "--access-mode=restricted",
+      ],
       "env": {
         // how to add a secret:
         // chezmoi secret keyring set --service=pg_mcp --user=pushsms
@@ -51,6 +57,10 @@
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": {{ keyring "github_mcp" "il-tmfv" | quote }},
       },
+    },
+    "fff": {
+      "command": "fff-mcp",
+      "args": ["/Users/ilyatimofeev/projects/"],
     },
   },
   "show_whitespaces": "trailing",
