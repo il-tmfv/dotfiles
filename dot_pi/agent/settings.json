@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.1",
+  "lastChangelogVersion": "0.84.3",
   "theme": "catppuccin-frappe",
   "packages": [
     "npm:pi-cursor-sdk",
@@ -11,5 +11,5 @@
   ],
   "defaultThinkingLevel": "medium",
   "defaultProvider": "cursor",
-  "defaultModel": "composer-2.5:slow"
+  "defaultModel": "grok-4.6:slow"
 }
