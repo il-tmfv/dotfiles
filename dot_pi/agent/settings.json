@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.3",
+  "lastChangelogVersion": "0.84.4",
   "theme": "catppuccin-frappe",
   "packages": [
     "npm:pi-cursor-sdk",
@@ -11,5 +11,6 @@
   ],
   "defaultThinkingLevel": "medium",
   "defaultProvider": "cursor",
-  "defaultModel": "grok-4.6:slow"
+  "defaultModel": "grok-4.6:slow",
+  "hideThinkingBlock": true
 }
