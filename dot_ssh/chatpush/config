@@ -49,6 +49,10 @@ Host pushapi_prod_2
   HostName prod.push-api.server2.chatpush.ru
   User deploy
 
+Host pushapi_prod_3
+  HostName prod.push-api.server3.chatpush.ru
+  User deploy
+
 Host pushapi_staging_1_1
   HostName staging.push-api.server1.chatpush.ru
   User staging
@@ -63,6 +67,14 @@ Host pushapi_staging_2_1
 
 Host pushapi_staging_2_2
   HostName staging2.push-api.server2.chatpush.ru
+  User staging
+
+Host pushapi_staging_3_1
+  HostName 212.233.79.52
+  User staging
+
+Host pushapi_staging_3_2
+  HostName 212.233.79.48
   User staging
 
 ### PUSH SMS
