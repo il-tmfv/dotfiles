@@ -106,6 +106,12 @@ alias tm="tmuxinator"
 
 alias wts="wt switch"
 alias wtl="wt list"
+alias wtr="wt remove"
+
+alias ghs="gh stack"
+alias ghsr="gh stack rebase"
+alias ghsp="gh stack push"
+alias ghss="gh stack sync --prune"
 
 alias g="git"
 alias ga="git add"
