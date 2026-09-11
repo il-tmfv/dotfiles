@@ -104,6 +104,9 @@ alias v="nvim"
 alias vc='nvim $(git ls-files -m -o --exclude-standard)'
 alias tm="tmuxinator"
 
+alias wts="wt switch"
+alias wtl="wt list"
+
 alias g="git"
 alias ga="git add"
 alias gb="git branch"
@@ -213,3 +216,5 @@ if [ -f '/Users/ilyatimofeev/yandex-cloud/path.bash.inc' ]; then source '/Users/
 # The next line enables shell command completion for yc.
 if [ -f '/Users/ilyatimofeev/yandex-cloud/completion.zsh.inc' ]; then source '/Users/ilyatimofeev/yandex-cloud/completion.zsh.inc'; fi
 
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
