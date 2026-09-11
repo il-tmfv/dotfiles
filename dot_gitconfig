@@ -9,9 +9,11 @@
 [diff]
 	tool = vimdiff
 [merge]
-  tool = vimdiff
+	tool = codediff
 	conflictStyle = zdiff3
 [mergetool "vimdiff"]
   cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [pull]
 	rebase = true
+[mergetool "codediff"]
+	cmd = nvim \"$MERGED\" -c \"CodeDiff --exit-on-close merge \\\"$MERGED\\\"\"
