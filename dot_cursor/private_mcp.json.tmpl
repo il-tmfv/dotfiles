@@ -1,0 +1,65 @@
+{
+  "mcpServers": {
+    "grafana": {
+      "command": "mcp-grafana",
+      "args": [],
+      "env": {
+        "GRAFANA_URL": "https://graf.pushsms.ru/",
+        "GRAFANA_SERVICE_ACCOUNT_TOKEN": {{ keyring "grafana_mcp" "pushsms" | quote }}
+      }
+    },
+    "yandex-tracker": {
+      "command": "uvx",
+      "args": [
+        "yandex-tracker-mcp@0.7.3"
+      ],
+      "env": {
+        "TRACKER_TOKEN": {{ keyring "ytracker_mcp" "pushsms" | quote }},
+        "TRACKER_CLOUD_ORG_ID": "bpfoigcnihgavqdi7up0"
+      }
+    },
+    "sentry_project_name": {
+      "env": {
+        "ASDF_NODEJS_VERSION": "25.2.0"
+      },
+      "command": "npx",
+      "args": [
+        "@sentry/mcp-server@latest",
+        "--access-token",
+        {{ keyring "sentry_mcp" "pushsms" | quote }},
+        "--host",
+        "sentry.pushsms.ru",
+        "--organization-slug",
+        "sentry"
+      ]
+    },
+    "github": {
+      "command": "github-mcp-server",
+      "args": [
+        "stdio",
+        "--read-only"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": {{ keyring "github_mcp" "il-tmfv" | quote }}
+      }
+    },
+    "postgres_production": {
+      "command": "uvx",
+      "args": [
+        "--with",
+        "mcp>=1.5.0,<2",
+        "postgres-mcp@0.3.0",
+        "--access-mode=restricted"
+      ],
+      "env": {
+        "UV_PYTHON": "python3.13",
+        // how to add a secret:
+        // chezmoi secret keyring set --service=pg_mcp --user=pushsms
+        "DATABASE_URI": {{ keyring "pg_mcp" "pushsms" | quote }}
+      }
+    },
+    "figma": {
+      "url": "http://127.0.0.1:3845/mcp"
+    }
+  }
+}

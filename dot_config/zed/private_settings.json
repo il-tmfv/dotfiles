@@ -7,58 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "context_servers": {
-    "figma": {
-      "enabled": true,
-      "url": "http://127.0.0.1:3845/mcp",
-    },
-    "grafana": {
-      // "command": "mcp-grafana",
-      "command": "/Users/ilyatimofeev/.asdf/installs/golang/1.25.1/bin/mcp-grafana",
-      "args": [],
-      "env": {
-        "GRAFANA_URL": "https://graf.pushsms.ru/",
-        "GRAFANA_SERVICE_ACCOUNT_TOKEN": {{ keyring "grafana_mcp" "pushsms" | quote }},
-      },
-    },
-    "postgres_production": {
-      "enabled": true,
-      "remote": false,
-      "command": "uvx",
-      "args": [
-        "--with",
-        "mcp>=1.5.0,<2",
-        "postgres-mcp@0.3.0",
-        "--access-mode=restricted",
-      ],
-      "env": {
-        // how to add a secret:
-        // chezmoi secret keyring set --service=pg_mcp --user=pushsms
-        "DATABASE_URI": {{ keyring "pg_mcp" "pushsms" | quote }},
-        "UV_PYTHON": "python3.13",
-      },
-    },
-    "yandex-tracker": {
-      "enabled": true,
-      "remote": false,
-      "command": "uvx",
-      "args": ["yandex-tracker-mcp@0.7.3"],
-      "env": {
-        "TRACKER_CLOUD_ORG_ID": "bpfoigcnihgavqdi7up0",
-        "TRACKER_TOKEN": {{ keyring "sentry_mcp" "pushsms" | quote }},
-      },
-    },
-    "github": {
-      "enabled": true,
-      "remote": false,
-      // "command": "github-mcp-server",
-      "command": "/Users/ilyatimofeev/.asdf/installs/golang/1.25.1/bin/github-mcp-server",
-      "args": ["stdio", "--read-only"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": {{ keyring "github_mcp" "il-tmfv" | quote }},
-      },
-    },
-  },
+  "cli_default_open_behavior": "new_window",
   "show_whitespaces": "trailing",
   "indent_guides": {
     "enabled": true,
@@ -175,10 +124,17 @@
     },
   },
   "agent_servers": {
+    "pi-acp": {
+      "type": "registry",
+      "env": { "ASDF_NODEJS_VERSION": "25.2.0" },
+    },
     "cursor": {
       "default_config_options": {
+        "effort": "medium",
+        "thinking": "true",
+        "mode": "agent",
         "fast": "false",
-        "model": "composer-2.5",
+        "model": "grok-4.6",
       },
       "type": "registry",
     },
