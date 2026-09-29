@@ -9,7 +9,7 @@
 {
   "context_servers": {
     "figma": {
-       "url": "http://127.0.0.1:3845/mcp"
+      "enabled": true,
       "url": "http://127.0.0.1:3845/mcp",
     },
     "grafana": {
@@ -19,7 +19,7 @@
       "env": {
         "GRAFANA_URL": "https://graf.pushsms.ru/",
         "GRAFANA_SERVICE_ACCOUNT_TOKEN": {{ keyring "grafana_mcp" "pushsms" | quote }},
-      }
+      },
     },
     "postgres_production": {
       "enabled": true,
@@ -57,10 +57,6 @@
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": {{ keyring "github_mcp" "il-tmfv" | quote }},
       },
-    },
-    "fff": {
-      "command": "fff-mcp",
-      "args": ["/Users/ilyatimofeev/projects/"],
     },
   },
   "show_whitespaces": "trailing",

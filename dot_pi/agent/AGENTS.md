@@ -1,5 +1,3 @@
-For file search or grep in git-indexed directory, use fff tools.
-
 # Domain Docs
 
 ## Agent skills
