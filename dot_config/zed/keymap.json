@@ -71,4 +71,13 @@
       "cmd-e": "editor::ToggleFocus",
     },
   },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-enter": [
+        "terminal::SendText",
+        "\u001b\r"
+      ]
+    }
+  },
 ]
