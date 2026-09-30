@@ -20,13 +20,12 @@
     },
     "sentry_project_name": {
       "env": {
-        "ASDF_NODEJS_VERSION": "25.2.0"
+        "ASDF_NODEJS_VERSION": "25.2.0",
+        "SENTRY_ACCESS_TOKEN": {{ keyring "sentry_mcp" "pushsms" | quote }}
       },
       "command": "npx",
       "args": [
         "@sentry/mcp-server@latest",
-        "--access-token",
-        {{ keyring "sentry_mcp" "pushsms" | quote }},
         "--host",
         "sentry.pushsms.ru",
         "--organization-slug",

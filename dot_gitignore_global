@@ -21,6 +21,8 @@ docs/agents/domain.md
 docs/agents/issue-tracker.md
 docs/agents/triage-labels.md
 
+CLAUDE.local.md
+
 .solargraph.yml
 .gem_rbs_collection
 rbs_collection.*
