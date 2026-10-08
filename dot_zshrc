@@ -191,6 +191,8 @@ git_current_branch() {
 }
 alias gpthis='gp --set-upstream origin $(git_current_branch)'
 
+alias ccc='claude --setting-sources user,local'
+
 export EDITOR='nvim'
 export DISABLE_SPRING=1
 export HUSKY_SKIP_HOOKS=1

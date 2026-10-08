@@ -1,5 +1,9 @@
 # Domain Docs
 
+## Cursor rules
+
+If rules from `.cursor/rules/*.mdc` are in the context already, do not read them again. Read `.mdc` manually, only if they are not in the context.
+
 ## Agent skills
 
 ### Issue tracker
@@ -12,7 +16,7 @@ Default vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-
 
 ### Domain docs
 
-Single-context layout (`CONTEXT.md` + `docs/adr/` at repo root). See `docs/agents/domain.md`.
+Single-context layout (`GLOSSARY.md` + `docs/adr/` at repo root). See `docs/agents/domain.md`.
 
 # I have ADHD
 
@@ -146,3 +150,4 @@ Before sending, delete:
 Then verify: if the reader reads only the first line and the last line, do they know (a) what to do next, and (b) what just happened?
 
 If yes, send.
+

@@ -1,42 +1,4 @@
 {
-  "model": "sonnet",
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Read",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude-code-docs/claude-docs-helper.sh hook-check"
-          }
-        ]
-      }
-    ]
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "input=$(cat); model=$(echo \"$input\" | jq -r '.model.display_name // \"?\"'); effort=$(echo \"$input\" | jq -r '.effort.level // empty'); used=$(echo \"$input\" | jq -r '.context_window.used_percentage // empty'); size=$(echo \"$input\" | jq -r '.context_window.context_window_size // empty'); five=$(echo \"$input\" | jq -r '.rate_limits.five_hour.used_percentage // empty'); week=$(echo \"$input\" | jq -r '.rate_limits.seven_day.used_percentage // empty'); reset=$(echo \"$input\" | jq -r '.rate_limits.five_hour.resets_at // empty'); fmt() { awk -v n=\"$1\" 'BEGIN{if(n>=1000000){s=sprintf(\"%.1f\",n/1000000);sub(/\\.0$/,\"\",s);print s \"M\"}else if(n>=1000){printf \"%.0fk\\n\",n/1000}else{printf \"%d\\n\",n}}'; }; mkbar() { f=$(($1 / 10)); b=''; for i in 1 2 3 4 5 6 7 8 9 10; do if [ \"$i\" -le \"$f\" ]; then b=\"${b}█\"; else b=\"${b}░\"; fi; done; printf '%s' \"$b\"; }; color() { if [ \"$1\" -ge 80 ]; then echo 31; elif [ \"$1\" -ge 50 ]; then echo 33; else echo 32; fi; }; rst() { [ -z \"$1\" ] && return; e=${1%.*}; rt=$(date -r \"$e\" +%H:%M 2>/dev/null) || return; rr=$((e - $(date +%s))); ro=\" ↻$rt\"; if [ \"$rr\" -gt 0 ]; then rh=$((rr / 3600)); rm=$(((rr % 3600) / 60)); if [ \"$rh\" -gt 0 ]; then ro=\"$ro (${rh}h$(printf '%02d' \"$rm\")m)\"; else ro=\"$ro (${rm}m)\"; fi; fi; printf '%s' \"$ro\"; }; rst7() { [ -z \"$1\" ] && return; e=${1%.*}; rt=$(date -r \"$e\" +'%a %d.%m %H:%M' 2>/dev/null) || return; printf ' ↻%s' \"$rt\"; }; seg() { [ -z \"$2\" ] && return; p=$(printf '%.0f' \"$2\"); [ \"$p\" -gt 100 ] && p=100; printf ' | \\033[%sm%s %s %s%%%s\\033[0m' \"$(color \"$p\")\" \"$1\" \"$(mkbar \"$p\")\" \"$p\" \"$3\"; }; pct=0; [ -n \"$used\" ] && pct=$(printf '%.0f' \"$used\"); [ \"$pct\" -gt 100 ] && pct=100; bar=$(mkbar \"$pct\"); c=$(color \"$pct\"); printf '\\033[36m%s\\033[0m' \"$model\"; [ -n \"$effort\" ] && printf ' | \\033[35m%s\\033[0m' \"$effort\"; if [ -n \"$used\" ]; then detail=''; if [ -n \"$size\" ]; then tok=$(awk -v p=\"$used\" -v s=\"$size\" 'BEGIN{printf \"%d\", p*s/100+0.5}'); detail=\" ($(fmt \"$tok\")/$(fmt \"$size\"))\"; fi; printf ' | \\033[%sm%s %s%%%s\\033[0m' \"$c\" \"$bar\" \"$pct\" \"$detail\"; else printf ' | \\033[2m%s --%%\\033[0m' \"$bar\"; fi; seg 5h \"$five\" \"$(rst \"$reset\")\"; reset7=$(echo \"$input\" | jq -r '.rate_limits.seven_day.resets_at // empty'); seg 7d \"$week\" \"$(rst7 \"$reset7\")\""
-  },
-  "enabledPlugins": {
-    "figma@claude-plugins-official": true
-  },
-  "extraKnownMarketplaces": {
-    "claude-plugins-official": {
-      "source": {
-        "source": "github",
-        "repo": "anthropics/claude-plugins-official"
-      }
-    }
-  },
-  "modelSettings": {
-    "claude-opus-5-5": {
-      "effortLevel": "high"
-    },
-    "claude-sonnet-5-5": {
-      "effortLevel": "medium"
-    }
-  },
-  "theme": "dark",
   "permissions": {
     "deny": [
       "EnterPlanMode",
@@ -53,9 +15,91 @@
       "CronList"
     ]
   },
-  "disableBundledSkills": true,
-  "disableworkflows": true,
-  "disableRemoteControl": true,
+  "model": "haiku",
   "disableClaudeAiConnectors": true,
-  "disableArtifact": true
+  "disableBundledSkills": true,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude-code-docs/claude-docs-helper.sh hook-check"
+          }
+        ]
+      }
+    ]
+  },
+  "disableRemoteControl": true,
+  "disableArtifact": true,
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); model=$(echo \"$input\" | jq -r '.model.display_name // \"?\"'); effort=$(echo \"$input\" | jq -r '.effort.level // empty'); used=$(echo \"$input\" | jq -r '.context_window.used_percentage // empty'); size=$(echo \"$input\" | jq -r '.context_window.context_window_size // empty'); five=$(echo \"$input\" | jq -r '.rate_limits.five_hour.used_percentage // empty'); week=$(echo \"$input\" | jq -r '.rate_limits.seven_day.used_percentage // empty'); reset=$(echo \"$input\" | jq -r '.rate_limits.five_hour.resets_at // empty'); fmt() { awk -v n=\"$1\" 'BEGIN{if(n>=1000000){s=sprintf(\"%.1f\",n/1000000);sub(/\\.0$/,\"\",s);print s \"M\"}else if(n>=1000){printf \"%.0fk\\n\",n/1000}else{printf \"%d\\n\",n}}'; }; mkbar() { f=$(($1 / 10)); b=''; for i in 1 2 3 4 5 6 7 8 9 10; do if [ \"$i\" -le \"$f\" ]; then b=\"${b}█\"; else b=\"${b}░\"; fi; done; printf '%s' \"$b\"; }; color() { if [ \"$1\" -ge 80 ]; then echo 31; elif [ \"$1\" -ge 50 ]; then echo 33; else echo 32; fi; }; rst() { [ -z \"$1\" ] && return; e=${1%.*}; rt=$(date -r \"$e\" +%H:%M 2>/dev/null) || return; rr=$((e - $(date +%s))); ro=\" ↻$rt\"; if [ \"$rr\" -gt 0 ]; then rh=$((rr / 3600)); rm=$(((rr % 3600) / 60)); if [ \"$rh\" -gt 0 ]; then ro=\"$ro (${rh}h$(printf '%02d' \"$rm\")m)\"; else ro=\"$ro (${rm}m)\"; fi; fi; printf '%s' \"$ro\"; }; rst7() { [ -z \"$1\" ] && return; e=${1%.*}; rt=$(date -r \"$e\" +'%a %d.%m %H:%M' 2>/dev/null) || return; printf ' ↻%s' \"$rt\"; }; seg() { [ -z \"$2\" ] && return; p=$(printf '%.0f' \"$2\"); [ \"$p\" -gt 100 ] && p=100; printf ' | \\033[%sm%s %s %s%%%s\\033[0m' \"$(color \"$p\")\" \"$1\" \"$(mkbar \"$p\")\" \"$p\" \"$3\"; }; pct=0; [ -n \"$used\" ] && pct=$(printf '%.0f' \"$used\"); [ \"$pct\" -gt 100 ] && pct=100; bar=$(mkbar \"$pct\"); c=$(color \"$pct\"); printf '\\033[36m%s\\033[0m' \"$model\"; [ -n \"$effort\" ] && printf ' | \\033[35m%s\\033[0m' \"$effort\"; vwdir=$(echo \"$input\" | jq -r '.workspace.current_dir // .cwd // empty'); vw=$(sed -n 3p \"$vwdir/.vibe-wise/profile.md\" 2>/dev/null); case \"$vw\" in *': active'*) printf ' | \\033[34mvw: ⏵⏵\\033[0m';; *': paused'*) printf ' | \\033[2mvw: ⏸\\033[0m';; esac; if [ -n \"$used\" ]; then detail=''; if [ -n \"$size\" ]; then tok=$(awk -v p=\"$used\" -v s=\"$size\" 'BEGIN{printf \"%d\", p*s/100+0.5}'); detail=\" ($(fmt \"$tok\")/$(fmt \"$size\"))\"; fi; printf ' | \\033[%sm%s %s%%%s\\033[0m' \"$c\" \"$bar\" \"$pct\" \"$detail\"; else printf ' | \\033[2m%s --%%\\033[0m' \"$bar\"; fi; seg 5h \"$five\" \"$(rst \"$reset\")\"; reset7=$(echo \"$input\" | jq -r '.rate_limits.seven_day.resets_at // empty'); seg 7d \"$week\" \"$(rst7 \"$reset7\")\""
+  },
+  "enabledPlugins": {
+    "figma@claude-plugins-official": true,
+    "vibe-wise@anthropic-plugin-directory": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "ccmods": {
+      "source": {
+        "source": "github",
+        "repo": "il-tmfv/ccmods"
+      }
+    }
+  },
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "theme": "dark",
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Bash(mix:*) routine invocations in /Users/ilyatimofeev/projects/pushsms_api (test/build/deps tasks)"
+    ],
+    "soft_deny": [
+      "$defaults",
+      "Bash(rabbitmqctl:*) destructive/queue-purging subcommands in /Users/ilyatimofeev/projects/pushsms_api",
+      "Writes or deploys touching ansible/apps/prod/* in /Users/ilyatimofeev/projects/pushsms_api"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: ChatPush (GitHub org — from origin remote github.com:ChatPush/pushsms_api.git)",
+      "**Cloud provider(s)**: None configured",
+      "**Repository visibility**: private (ChatPush/pushsms_api, confirmed via gh)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: local secret files excluded via .gitignore (`/config/*.secret.exs`, `/scripts/ci_review/.env`); config files of note include config/dev.secret.exs, config/prod.exs, lib/pushsms/profile/secret_key.ex, lib/services/generate_api_secrets.ex, scripts/ci_review/.env.example",
+      "**Default / protected branches**: `master` (default and protected, per gh; rulesets not queryable here so additional protections may exist beyond classic branch protection)",
+      "**CI/CD deploy targets**: None configured",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine with open internet",
+      "**Source control**: ChatPush/pushsms_api (github.com:ChatPush/pushsms_api.git) only — no additional orgs configured",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: config/dev.secret.exs, config/dev.secret.example.exs, config/prod.exs, lib/pushsms/profile/secret_key.ex, lib/services/generate_api_secrets.ex, priv/repo/migrations/20180707154023_create_secrets_keys.exs, scripts/ci_review/.env(.example), test/services/generate_api_secrets_test.exs — share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment (e.g. ansible/apps/prod/deploy.yml, ansible/apps/prod/inventory)",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic (ansible prod inventory/deploy targets)",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment (e.g. ansible/apps/prod/*)",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development",
+      "**Trusted repo**: /Users/ilyatimofeev/projects/pushsms_api (ChatPush/pushsms_api, private) and its configured remote(s)",
+      "**Org-specific CLIs**: mix (Elixir/Phoenix build tool, 46×), elixir (1×), rabbitmqctl (1×) — all routine in this repo"
+    ]
+  },
+  "disableworkflows": true
 }

@@ -16,6 +16,7 @@
 tags
 .notags
 
+.vibe-wise/
 .scratch/
 docs/agents/domain.md
 docs/agents/issue-tracker.md
@@ -26,3 +27,5 @@ CLAUDE.local.md
 .solargraph.yml
 .gem_rbs_collection
 rbs_collection.*
+
+**/.claude/settings.local.json
