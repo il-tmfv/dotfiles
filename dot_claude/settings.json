@@ -39,7 +39,8 @@
   },
   "enabledPlugins": {
     "figma@claude-plugins-official": true,
-    "vibe-wise@anthropic-plugin-directory": true
+    "vibe-wise@anthropic-plugin-directory": true,
+    "cc-safety-net@cc-marketplace": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -52,6 +53,13 @@
       "source": {
         "source": "github",
         "repo": "il-tmfv/ccmods"
+      },
+      "autoUpdate": true
+    },
+    "cc-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "kenryu42/cc-marketplace"
       }
     }
   },
@@ -60,6 +68,9 @@
       "effortLevel": "high"
     },
     "claude-sonnet-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-haiku-5-5": {
       "effortLevel": "high"
     }
   },
