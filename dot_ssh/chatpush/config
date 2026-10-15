@@ -80,7 +80,7 @@ Host pushapi_staging_3_2
 ### PUSH SMS
 
 Host pushsms_prod
-  HostName 51.250.19.62
+  HostName 45.9.27.119
   User deploy
 
 Host pushsms_staging
