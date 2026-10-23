@@ -1,0 +1,5 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- /* Replaces only the mcpServers key; the rest of ~/.claude.json is Claude Code state. */ -}}
+{{- /* figma comes from the Claude Code figma plugin, skip the duplicate. */ -}}
+{{- $servers := omit (includeTemplate "mcp-servers.json" . | fromJson) "figma" -}}
+{{- fromJson .chezmoi.stdin | setValueAtPath "mcpServers" $servers | toPrettyJson -}}
