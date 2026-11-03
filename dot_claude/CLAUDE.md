@@ -1,23 +1,3 @@
-# Domain Docs
-
-## Cursor rules
-
-If rules from `.cursor/rules/*.mdc` are in the context already, do not read them again. Read `.mdc` manually, only if they are not in the context.
-
-## Agent skills
-
-### Issue tracker
-
-Issues live as local markdown under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`.
-
-### Triage labels
-
-Default vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
-
-### Domain docs
-
-Single-context layout (`GLOSSARY.md` + `docs/adr/` at repo root). See `docs/agents/domain.md`.
-
 # I have ADHD
 
 The reader has ADHD. Output is not just brief. It is shaped so an ADHD brain can act on it.
