@@ -15,7 +15,7 @@
       "CronList"
     ]
   },
-  "model": "haiku",
+  "model": "opus",
   "disableClaudeAiConnectors": true,
   "disableBundledSkills": true,
   "hooks": {
@@ -40,7 +40,8 @@
   "enabledPlugins": {
     "figma@claude-plugins-official": true,
     "vibe-wise@anthropic-plugin-directory": true,
-    "cc-safety-net@cc-marketplace": true
+    "cc-safety-net@cc-marketplace": true,
+    "clangd-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -65,7 +66,8 @@
   },
   "modelSettings": {
     "claude-opus-5-5": {
-      "effortLevel": "high"
+      "effortLevel": "high",
+      "autoCompactWindow": 400000
     },
     "claude-sonnet-5-5": {
       "effortLevel": "high"
@@ -112,5 +114,6 @@
       "**Org-specific CLIs**: mix (Elixir/Phoenix build tool, 46×), elixir (1×), rabbitmqctl (1×) — all routine in this repo"
     ]
   },
-  "disableworkflows": true
+  "disableworkflows": true,
+  "awaySummaryEnabled": false
 }
