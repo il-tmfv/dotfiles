@@ -53,13 +53,8 @@
     How to add the secret: chezmoi secret keyring set --service=pg_mcp --user=pushsms
   */}}
   "postgres_production": {
-    "command": "bash",
-    "args": [
-      "-c",
-      "exec uvx --overrides <(echo pglast==7.21) --with 'mcp>=1.5.0,<2' postgres-mcp@0.3.0 --access-mode=restricted"
-    ],
+    "command": "postgres-dba-mcp",
     "env": {
-      "UV_PYTHON": "python3.13",
       "DATABASE_URI": {{ keyring "pg_mcp" "pushsms" | quote }}
     }
   },

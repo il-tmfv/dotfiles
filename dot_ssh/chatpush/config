@@ -87,6 +87,11 @@ Host pushsms_staging
   HostName 37.18.110.10
   User staging
 
+### Push Red Alert
+Host push_red_alert
+  HostName 45.9.26.174
+  User staging
+
 ### PUSH DEPLOY
 
 Host push_deploy_ex

@@ -1,3 +1,4 @@
+Be extremely concise. Sacrifice grammar for the sake of concision.
 ## Language conventions
 - Write code reviews, PR descriptions, tickets, QA guides and admin messages in Russian unless told otherwise.
 - Keep PR titles, commit messages and code comments in English.

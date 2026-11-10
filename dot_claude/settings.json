@@ -13,6 +13,9 @@
       "CronCreate",
       "CronDelete",
       "CronList"
+    ],
+    "allow": [
+      "mcp__postgres_production"
     ]
   },
   "model": "opus",
@@ -76,6 +79,7 @@
       "effortLevel": "high"
     }
   },
+  "awaySummaryEnabled": false,
   "theme": "dark",
   "autoMode": {
     "allow": [
@@ -114,6 +118,5 @@
       "**Org-specific CLIs**: mix (Elixir/Phoenix build tool, 46×), elixir (1×), rabbitmqctl (1×) — all routine in this repo"
     ]
   },
-  "disableworkflows": true,
-  "awaySummaryEnabled": false
+  "disableworkflows": true
 }
