@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "1.5.2",
   "theme": "catppuccin-frappe",
   "packages": [
     "npm:pi-cursor-sdk",
@@ -7,10 +7,22 @@
     "npm:@tmustier/pi-ralph-wiggum",
     "npm:@tmustier/pi-usage-extension",
     "npm:@diegopetrucci/pi-context-inspector",
-    "npm:@sherif-fanous/pi-catppuccin"
+    "npm:@sherif-fanous/pi-catppuccin",
+    "npm:pi-glm-usage",
+    "npm:pi-mcp-adapter",
+    "npm:pi-subagents",
+    "npm:pi-web-access"
   ],
   "defaultThinkingLevel": "medium",
-  "defaultProvider": "cursor",
-  "defaultModel": "grok-4.6:slow",
-  "hideThinkingBlock": true
+  "defaultProvider": "zai",
+  "defaultModel": "glm-5.3",
+  "hideThinkingBlock": true,
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-cursor-sdk\",\"scope\":\"user\"}": "0.5.42",
+    "{\"source\":\"npm:@tmustier/pi-ralph-wiggum\",\"scope\":\"user\"}": "0.2.5",
+    "{\"source\":\"npm:@tmustier/pi-usage-extension\",\"scope\":\"user\"}": "0.10.2"
+  },
+  "extensions": [
+    "-builtin:mcp"
+  ]
 }
