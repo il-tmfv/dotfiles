@@ -11,7 +11,9 @@
     "npm:pi-glm-usage",
     "npm:pi-mcp-adapter",
     "npm:pi-subagents",
-    "npm:pi-web-access"
+    "npm:pi-web-access",
+    "git:github.com/code-yeongyu/pi-rules",
+    "npm:cc-safety-net"
   ],
   "defaultThinkingLevel": "medium",
   "defaultProvider": "zai",
@@ -20,7 +22,11 @@
   "extensionChangelogVersions": {
     "{\"source\":\"npm:pi-cursor-sdk\",\"scope\":\"user\"}": "0.5.42",
     "{\"source\":\"npm:@tmustier/pi-ralph-wiggum\",\"scope\":\"user\"}": "0.2.5",
-    "{\"source\":\"npm:@tmustier/pi-usage-extension\",\"scope\":\"user\"}": "0.10.2"
+    "{\"source\":\"npm:@tmustier/pi-usage-extension\",\"scope\":\"user\"}": "0.10.2",
+    "{\"source\":\"npm:pi-mcp-adapter\",\"scope\":\"user\"}": "7.0.1",
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.89.0",
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.48.0",
+    "{\"source\":\"git:github.com/code-yeongyu/pi-rules\",\"scope\":\"user\"}": "0.2.0"
   },
   "extensions": [
     "-builtin:mcp"
