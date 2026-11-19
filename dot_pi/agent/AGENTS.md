@@ -1,22 +1,6 @@
 Never run all the tests in a project if not asked directly.
 
-# Domain Docs
-
-## Agent skills
-
-Personal engineering skills live in the `pi-tmfv` package (`~/projects/pi-tmfv`), installed as a local pi package. Every name carries the `tmfv-` prefix. All agent working files go under `.tmfv/` in the repo root — hardcoded, no setup, gitignored globally, never an external tracker.
-
-### Issue tracker
-
-Local markdown under `.tmfv/`: specs in `.tmfv/specs/`, tickets in `.tmfv/tickets/<feature>/`, notes in `.tmfv/notes/`. Created by `/skill:tmfv-to-spec` and `/skill:tmfv-to-tickets`.
-
-### Triage labels
-
-`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`.
-
-### Domain docs
-
-`.tmfv/GLOSSARY.md` + `.tmfv/adr/`. Managed by `/skill:tmfv-domain-modeling`.
+Agent working files — specs, tickets, glossary, ADRs, notes — live under `.tmfv/` in the repo root; the `tmfv-*` skills from the `pi-tmfv` package manage them.
 
 # I have ADHD
 
