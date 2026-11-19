@@ -13,7 +13,9 @@
     "npm:pi-subagents",
     "npm:pi-web-access",
     "git:github.com/code-yeongyu/pi-rules",
-    "npm:cc-safety-net"
+    "npm:cc-safety-net",
+    "npm:@sting8k/pi-vcc",
+    "../../projects/pi-tmfv"
   ],
   "defaultThinkingLevel": "medium",
   "defaultProvider": "zai",
@@ -24,9 +26,11 @@
     "{\"source\":\"npm:@tmustier/pi-ralph-wiggum\",\"scope\":\"user\"}": "0.2.5",
     "{\"source\":\"npm:@tmustier/pi-usage-extension\",\"scope\":\"user\"}": "0.10.2",
     "{\"source\":\"npm:pi-mcp-adapter\",\"scope\":\"user\"}": "7.0.1",
-    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.89.0",
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.89.1",
     "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.48.0",
-    "{\"source\":\"git:github.com/code-yeongyu/pi-rules\",\"scope\":\"user\"}": "0.2.0"
+    "{\"source\":\"git:github.com/code-yeongyu/pi-rules\",\"scope\":\"user\"}": "0.2.0",
+    "{\"source\":\"npm:@sting8k/pi-vcc\",\"scope\":\"user\"}": "0.11.2",
+    "{\"source\":\"npm:@diegopetrucci/pi-context-inspector\",\"scope\":\"user\"}": "0.1.19"
   },
   "extensions": [
     "-builtin:mcp"

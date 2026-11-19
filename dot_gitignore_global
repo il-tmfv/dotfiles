@@ -29,3 +29,5 @@ CLAUDE.local.md
 rbs_collection.*
 
 **/.claude/settings.local.json
+
+.tmfv/
