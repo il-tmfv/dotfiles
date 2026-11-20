@@ -1,0 +1,40 @@
+{
+  "programs": {
+    "phx-server": {
+      "name": "Phoenix server",
+      "icon": "icons/iex.svg",
+      "tint": true,
+      "tile": "#fd4f00",
+      "run": [
+        "iex",
+        "-S",
+        "mix",
+        "phx.server"
+      ]
+    },
+    "foreman-dev": {
+      "name": "Foreman",
+      "icon": "icons/program.svg",
+      "tint": true,
+      "tile": "#1f6feb",
+      "run": [
+        "foreman",
+        "start",
+        "-f",
+        "Procfile.dev"
+      ]
+    },
+    "pi": {
+      "run": [
+        "env",
+        "ASDF_NODEJS_VERSION=26.13.1",
+        "pi"
+      ]
+    },
+    "lazygit": {
+      "run": [
+        "lazygit"
+      ]
+    }
+  }
+}
