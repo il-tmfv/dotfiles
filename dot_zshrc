@@ -103,6 +103,7 @@ source $ZSH/oh-my-zsh.sh
 alias v="nvim"
 alias vc='nvim $(git ls-files -m -o --exclude-standard)'
 alias tm="tmuxinator"
+alias cz="chezmoi"
 
 alias wts="wt switch"
 alias wtl="wt list"
