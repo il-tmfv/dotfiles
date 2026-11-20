@@ -1,5 +1,8 @@
 {
   "permissions": {
+    "allow": [
+      "mcp__postgres_production"
+    ],
     "deny": [
       "EnterPlanMode",
       "ExitPlanMode",
@@ -13,9 +16,6 @@
       "CronCreate",
       "CronDelete",
       "CronList"
-    ],
-    "allow": [
-      "mcp__postgres_production"
     ]
   },
   "model": "opus",
@@ -80,7 +80,7 @@
     }
   },
   "awaySummaryEnabled": false,
-  "theme": "dark",
+  "theme": "auto",
   "autoMode": {
     "allow": [
       "$defaults",

@@ -57,8 +57,5 @@
     "env": {
       "DATABASE_URI": {{ keyring "pg_mcp" "pushsms" | quote }}
     }
-  },
-  "figma": {
-    "url": "http://127.0.0.1:3845/mcp"
   }
 }
