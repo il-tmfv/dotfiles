@@ -1,10 +1,9 @@
 {
-  "lastChangelogVersion": "1.5.2",
+  "lastChangelogVersion": "1.6.0",
   "theme": "catppuccin-frappe",
   "packages": [
     "npm:pi-cursor-sdk",
     "npm:pi-btw",
-    "npm:@tmustier/pi-ralph-wiggum",
     "npm:@tmustier/pi-usage-extension",
     "npm:@diegopetrucci/pi-context-inspector",
     "npm:@sherif-fanous/pi-catppuccin",
@@ -15,21 +14,24 @@
     "git:github.com/code-yeongyu/pi-rules",
     "npm:cc-safety-net",
     "npm:@sting8k/pi-vcc",
-    "../../projects/pi-tmfv"
+    "../../projects/pi-tmfv",
+    "npm:pi-ask-user"
   ],
-  "defaultThinkingLevel": "medium",
+  "defaultTools": ["+codemode"],
+  "defaultThinkingLevel": "high",
   "defaultProvider": "zai",
   "defaultModel": "glm-5.3",
   "hideThinkingBlock": true,
+  "showCacheMissNotices": true,
   "extensionChangelogVersions": {
-    "{\"source\":\"npm:pi-cursor-sdk\",\"scope\":\"user\"}": "0.5.42",
+    "{\"source\":\"npm:pi-cursor-sdk\",\"scope\":\"user\"}": "0.5.46",
     "{\"source\":\"npm:@tmustier/pi-ralph-wiggum\",\"scope\":\"user\"}": "0.2.5",
     "{\"source\":\"npm:@tmustier/pi-usage-extension\",\"scope\":\"user\"}": "0.10.2",
     "{\"source\":\"npm:pi-mcp-adapter\",\"scope\":\"user\"}": "7.0.1",
-    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.89.1",
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.90.0",
     "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.48.0",
     "{\"source\":\"git:github.com/code-yeongyu/pi-rules\",\"scope\":\"user\"}": "0.2.0",
-    "{\"source\":\"npm:@sting8k/pi-vcc\",\"scope\":\"user\"}": "0.11.2",
+    "{\"source\":\"npm:@sting8k/pi-vcc\",\"scope\":\"user\"}": "0.12.0",
     "{\"source\":\"npm:@diegopetrucci/pi-context-inspector\",\"scope\":\"user\"}": "0.1.19"
   },
   "extensions": [
