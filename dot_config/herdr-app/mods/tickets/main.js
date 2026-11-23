@@ -1,6 +1,7 @@
 // .tmfv artifacts of the focused project (specs, tickets, notes, ADRs, handoffs),
 // grouped by task key: the letters-digits prefix in file names, e.g. core-2401.
-// Newest files first; a click previews the file, the copy button copies its path.
+// Newest files first; a click previews the file, one copy button copies its path,
+// the other its contents.
 import { View, div, svg } from "gpui-kit";
 import { h_flex, v_flex, Scrollbar, InputState, Input } from "gpui-base";
 import { spaces, panes, focused, exec, readTextFile, watchFolder, run, theme, checking, settings, window } from "herdr";
@@ -91,6 +92,8 @@ export default class Tickets extends View {
       this.open = null;
       this.preview = [];
       this.previewH = 0;
+      this.copied = null;
+      this.copiedContent = null;
       this.expanded = new Set();
       this.filter = "";
       this.input.set_value("");
@@ -200,6 +203,35 @@ export default class Tickets extends View {
     });
   }
 
+  // Full contents, not the truncated preview lines. readTextFile returns null
+  // for binary, too large or unreadable files: say so instead of copying nothing.
+  copyContent(rel, cx) {
+    if (!this.root) return;
+    const root = this.root, on = this.on, context = this.context;
+    this.note = null;
+    cx.spawn(async (cx) => {
+      try {
+        const text = await readTextFile(`${root}/.tmfv/${rel}`, { on });
+        if (key() !== context) return;
+        if (text === null) {
+          this.note = `Cannot copy ${rel}: binary, too large, or unreadable`;
+        } else {
+          cx.write_to_clipboard(text);
+          this.copiedContent = rel;
+          cx.timer.after(1500, (cx) => {
+            if (this.copiedContent === rel) {
+              this.copiedContent = null;
+              cx.notify();
+            }
+          });
+        }
+      } catch (e) {
+        if (key() === context) this.note = `Cannot copy ${rel}: ${e.message ?? e}`;
+      }
+      cx.notify();
+    });
+  }
+
   // Zed first (this machine's pick), then $VISUAL/$EDITOR as the machine sees it:
   // a TUI editor opens in a terminal tab (in the shown space, when that space
   // lives on the same machine), anything else is launched directly, and with
@@ -250,6 +282,11 @@ export default class Tickets extends View {
           .hover((s) => s.bg(t.hover).text_color(t.foreground))
           .on_click((_e, cx) => { cx.stop_propagation(); this.openExternal(file.rel, cx); })
           .child(svg("mods/tickets/open.svg").size(12)))
+        .child(div().id(`copytext-${id}`).size(20).flex_none().flex().items_center().justify_center().rounded(4)
+          .text_color(this.copiedContent === file.rel ? t.ansi2 : t.dim)
+          .hover((s) => s.bg(t.hover).text_color(t.foreground))
+          .on_click((_e, cx) => { cx.stop_propagation(); this.copyContent(file.rel, cx); })
+          .child(svg(this.copiedContent === file.rel ? "mods/tickets/check.svg" : "mods/tickets/copy-text.svg").size(12)))
         .child(div().id(`copy-${id}`).size(20).flex_none().flex().items_center().justify_center().rounded(4)
           .text_color(this.copied === file.rel ? t.ansi2 : t.dim)
           .hover((s) => s.bg(t.hover).text_color(t.foreground))
