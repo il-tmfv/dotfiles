@@ -20,9 +20,30 @@
   "defaultTools": ["+codemode"],
   "defaultThinkingLevel": "high",
   "defaultProvider": "zai",
-  "defaultModel": "glm-5.3",
+  "defaultModel": "glm-5.4",
   "hideThinkingBlock": true,
   "showCacheMissNotices": true,
+  "subagents": {
+    "defaultModel": "zai/glm-5.4",
+    "agentOverrides": {
+      "scout": { "model": "zai/glm-5.3-flash" },
+      "researcher": { "model": "zai/glm-5.3-flash" },
+      "worker": { "model": "zai/glm-5.4" },
+      "delegate": { "model": "zai/glm-5.4" },
+      "reviewer": { "model": "zai/glm-5.4", "thinking": "high" },
+      "oracle": { "model": "zai/glm-5.4", "thinking": "high" }
+    },
+    "agentOverridesByProvider": {
+      "cursor": {
+        "scout": { "model": "cursor/composer-2.5" },
+        "researcher": { "model": "cursor/grok-4.6" },
+        "worker": { "model": "cursor/grok-4.6", "thinking": "high" },
+        "delegate": { "model": "cursor/grok-4.6", "thinking": "high" },
+        "reviewer": { "model": "cursor/grok-4.7", "thinking": "high" },
+        "oracle": { "model": "cursor/grok-4.7@500k", "thinking": "high" }
+      }
+    }
+  },
   "extensionChangelogVersions": {
     "{\"source\":\"npm:pi-cursor-sdk\",\"scope\":\"user\"}": "0.5.46",
     "{\"source\":\"npm:@tmustier/pi-ralph-wiggum\",\"scope\":\"user\"}": "0.2.5",
