@@ -1,5 +1,6 @@
 // .tmfv artifacts of the focused project (specs, tickets, notes, ADRs, handoffs),
-// grouped by task key: the letters-digits prefix in file names, e.g. core-2401.
+// grouped by task key (the letters-digits prefix in file names, e.g. core-2401),
+// then by folder kind: tickets, specs, notes, adr, qa — known kinds get icons.
 // Newest files first; a click previews the file, one copy button copies its path,
 // the other its contents.
 import { View, div, svg } from "gpui-kit";
@@ -18,6 +19,40 @@ const PREFIX = /^([a-z]+-\d+)/i;
 const MAX_FILES = 500;
 const TUIS = new Set(["nvim", "vim", "vi", "nano", "micro", "helix", "emacs", "joe"]);
 
+// Folder kinds keep a fixed order; unknown kinds follow alphabetically,
+// files at the .tmfv root (no folder) go last.
+const KIND_ORDER = ["tickets", "specs", "notes", "adr", "qa"];
+const KIND_ICONS = {
+  tickets: "mods/tickets/ticket.svg",
+  specs: "mods/tickets/spec.svg",
+  notes: "mods/tickets/note.svg",
+  adr: "mods/tickets/adr.svg",
+  qa: "mods/tickets/qa.svg",
+};
+
+// The folder kind of a file: the first path component under .tmfv
+// ("" for files at its root, e.g. GLOSSARY.md).
+function kindOf(rel) {
+  const slash = rel.indexOf("/");
+  return slash < 0 ? "" : rel.slice(0, slash);
+}
+
+function kindGroups(files) {
+  const byKind = new Map();
+  for (const file of files) {
+    const kind = kindOf(file.rel);
+    if (!byKind.has(kind)) byKind.set(kind, []);
+    byKind.get(kind).push(file);
+  }
+  const rank = (kind) => {
+    const at = KIND_ORDER.indexOf(kind);
+    return at < 0 ? KIND_ORDER.length : at;
+  };
+  return [...byKind.entries()]
+    .sort((a, b) => rank(a[0]) - rank(b[0]) || (a[0] === "" ? 1 : b[0] === "" ? -1 : (a[0] < b[0] ? -1 : 1)))
+    .map(([kind, list]) => ({ kind, files: list }));
+}
+
 // The task a file belongs to: the first path component with a letters-digits prefix.
 function taskOf(rel) {
   for (const part of rel.split("/")) {
@@ -25,6 +60,30 @@ function taskOf(rel) {
     if (found) return found[1].toLowerCase();
   }
   return "";
+}
+
+// The name shown in the list: the path without the kind folder (its header
+// shows it) and without the task — a whole task folder in the middle, or the
+// task prefix on the file name itself, e.g. tickets/core-2505-x/04-plan.md
+// reads as "04-plan.md" next to the TICKETS header of the CORE-2505 group.
+function shortPath(rel, task) {
+  if (!rel.includes("/")) return rel; // a file at the .tmfv root: nothing to cut
+  const body = rel.split("/").slice(1);
+  if (!task) return body.join("/");
+  const out = [];
+  let cut = false; // only the first task match goes: a later file may carry the same prefix
+  for (let i = 0; i < body.length; i++) {
+    const part = body[i];
+    if (!cut && part.toLowerCase().startsWith(task)) {
+      cut = true;
+      if (i < body.length - 1) continue; // the task's own folder: gone, the header says it
+      const trimmed = part.slice(task.length).replace(/^[-_. ]+/, "");
+      out.push(trimmed || part); // a file named just "core-2505.md" keeps its name
+      continue;
+    }
+    out.push(part);
+  }
+  return out.join("/");
 }
 
 function localDate(seconds) {
@@ -51,6 +110,7 @@ export default class Tickets extends View {
     this.groups = [];
     this.handle = cx.focus_handle();
     this.expanded = new Set();
+    this.expandedKinds = new Set();
     this.input = InputState.new({ placeholder: "Filter by task or file…" });
     this.input.on("change", (_e, cx) => {
       this.filter = this.input.value();
@@ -95,6 +155,7 @@ export default class Tickets extends View {
       this.copied = null;
       this.copiedContent = null;
       this.expanded = new Set();
+      this.expandedKinds.clear();
       this.filter = "";
       this.input.set_value("");
       this.cache.clear();
@@ -122,7 +183,8 @@ export default class Tickets extends View {
             if (!Number.isFinite(mtime) || !path.startsWith(tmfv + "/")) continue;
             const rel = path.slice(tmfv.length + 1);
             if (rel.split("/").some((part) => part === ".DS_Store")) continue;
-            files.push({ rel, task: taskOf(rel), mtime });
+            const task = taskOf(rel);
+            files.push({ rel, task, short: shortPath(rel, task), mtime });
           }
         } else {
           // find fails when .tmfv is absent: that is the normal empty state, not an error.
@@ -270,13 +332,13 @@ export default class Tickets extends View {
     });
   }
 
-  fileRow(file, t) {
+  fileRow(file, t, indent = 0) {
     const open = this.open === file.rel;
     const id = file.rel.replace(/[^A-Za-z0-9_.-]+/g, "-");
-    return v_flex().id(`ticket-file-${id}`).flex_none().rounded(7).when(open, (el) => el.bg(t.selected))
+    return v_flex().id(`ticket-file-${id}`).flex_none().rounded(7).when(indent, (el) => el.pl(indent)).when(open, (el) => el.bg(t.selected))
       .child(h_flex().h(28).px(8).gap(7).items_center().cursor_pointer().hover((s) => s.bg(t.hover))
         .on_click((_e, cx) => this.pick(file.rel, cx))
-        .child(div().flex_1().min_w(0).truncate().child(file.rel))
+        .child(div().flex_1().min_w(0).truncate().child(file.short || file.rel))
         .child(div().text_size(11).text_color(t.dim).flex_none().child(localDate(file.mtime)))
         .child(div().id(`open-${id}`).size(20).flex_none().flex().items_center().justify_center().rounded(4).text_color(t.dim)
           .hover((s) => s.bg(t.hover).text_color(t.foreground))
@@ -319,7 +381,30 @@ export default class Tickets extends View {
         .child(div().px(5).py(1).rounded(4).border_1().border_color(t.border).text_size(10).text_color(t.muted).child(String(group.files.length)))
         .child(div().flex_1())
         .child(div().text_size(11).text_color(t.dim).flex_none().child(localDate(group.newest))))
-      .when(expanded, (el) => el.children(group.files.map((file) => this.fileRow(file, t))));
+      .when(expanded, (el) => el.children(kindGroups(group.files).map((kg) => this.kindRow(group.task, kg, t, filtering))));
+  }
+
+  // A folder kind inside a task: its own collapsible header with an icon
+  // (a known kind's icon, a folder for unknown ones, a file for the root),
+  // collapsed until asked.
+  kindRow(task, kg, t, filtering) {
+    const label = kg.kind || "root";
+    const id = `${task || "none"}/${label}`.replace(/[^A-Za-z0-9_.-]+/g, "-");
+    const expanded = filtering || this.expandedKinds.has(id);
+    const icon = KIND_ICONS[kg.kind] ?? (kg.kind ? "mods/files/folder.svg" : "mods/files/file.svg");
+    return v_flex().id(`ticket-kind-${id}`).flex_none()
+      .child(h_flex().id(`ticket-kind-head-${id}`).h(22).pl(14).pr(8).gap(6).items_center().cursor_pointer().hover((s) => s.bg(t.hover))
+        .on_click((_e, cx) => {
+          if (this.expandedKinds.has(id)) this.expandedKinds.delete(id);
+          else this.expandedKinds.add(id);
+          cx.notify();
+        })
+        .child(svg(expanded ? "mods/files/chevron-down.svg" : "mods/files/chevron-right.svg").size(11).flex_none().text_color(t.dim))
+        .child(svg(icon).size(12).flex_none().text_color(t.muted))
+        .child(div().font_semibold().text_size(11).text_color(t.muted).child(label.toUpperCase()))
+        .child(div().text_size(10).text_color(t.dim).child(String(kg.files.length)))
+        .child(div().flex_1()))
+      .when(expanded, (el) => el.children(kg.files.map((file) => this.fileRow(file, t, 24))));
   }
 
   render(cx) {
