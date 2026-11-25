@@ -17,7 +17,9 @@
     "../../projects/pi-tmfv",
     "npm:pi-ask-user"
   ],
-  "defaultTools": ["+codemode"],
+  "defaultTools": [
+    "+codemode"
+  ],
   "defaultThinkingLevel": "high",
   "defaultProvider": "zai",
   "defaultModel": "glm-5.4",
@@ -26,21 +28,51 @@
   "subagents": {
     "defaultModel": "zai/glm-5.4",
     "agentOverrides": {
-      "scout": { "model": "zai/glm-5.3-flash" },
-      "researcher": { "model": "zai/glm-5.3-flash" },
-      "worker": { "model": "zai/glm-5.4" },
-      "delegate": { "model": "zai/glm-5.4" },
-      "reviewer": { "model": "zai/glm-5.4", "thinking": "high" },
-      "oracle": { "model": "zai/glm-5.4", "thinking": "high" }
+      "scout": {
+        "model": "zai/glm-5.3-flash"
+      },
+      "researcher": {
+        "model": "zai/glm-5.3-flash"
+      },
+      "worker": {
+        "model": "zai/glm-5.4"
+      },
+      "delegate": {
+        "model": "zai/glm-5.4"
+      },
+      "reviewer": {
+        "model": "zai/glm-5.4",
+        "thinking": "high"
+      },
+      "oracle": {
+        "model": "zai/glm-5.4",
+        "thinking": "high"
+      }
     },
     "agentOverridesByProvider": {
       "cursor": {
-        "scout": { "model": "cursor/composer-2.5" },
-        "researcher": { "model": "cursor/grok-4.6" },
-        "worker": { "model": "cursor/grok-4.6", "thinking": "high" },
-        "delegate": { "model": "cursor/grok-4.6", "thinking": "high" },
-        "reviewer": { "model": "cursor/grok-4.7", "thinking": "high" },
-        "oracle": { "model": "cursor/grok-4.7@500k", "thinking": "high" }
+        "scout": {
+          "model": "cursor/composer-2.5"
+        },
+        "researcher": {
+          "model": "cursor/grok-4.6"
+        },
+        "worker": {
+          "model": "cursor/grok-4.6",
+          "thinking": "high"
+        },
+        "delegate": {
+          "model": "cursor/grok-4.6",
+          "thinking": "high"
+        },
+        "reviewer": {
+          "model": "cursor/grok-4.7",
+          "thinking": "high"
+        },
+        "oracle": {
+          "model": "cursor/grok-4.7@500k",
+          "thinking": "high"
+        }
       }
     }
   },
@@ -52,7 +84,7 @@
     "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.90.0",
     "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.48.0",
     "{\"source\":\"git:github.com/code-yeongyu/pi-rules\",\"scope\":\"user\"}": "0.2.0",
-    "{\"source\":\"npm:@sting8k/pi-vcc\",\"scope\":\"user\"}": "0.12.0",
+    "{\"source\":\"npm:@sting8k/pi-vcc\",\"scope\":\"user\"}": "0.12.1",
     "{\"source\":\"npm:@diegopetrucci/pi-context-inspector\",\"scope\":\"user\"}": "0.1.19"
   },
   "extensions": [
