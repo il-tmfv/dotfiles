@@ -15,7 +15,7 @@
   "yandex-tracker": {
     "command": "uvx",
     "args": [
-      "yandex-tracker-mcp@0.7.3"
+      "yandex-tracker-mcp@0.11.0"
     ],
     "env": {
       "TRACKER_TOKEN": {{ keyring "ytracker_mcp" "pushsms" | quote }},
