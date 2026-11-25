@@ -36,20 +36,7 @@
       "sentry"
     ]
   },
-  "github": {
-    "command": "github-mcp-server",
-    "args": [
-      "stdio",
-      "--read-only"
-    ],
-    "env": {
-      "GITHUB_PERSONAL_ACCESS_TOKEN": {{ keyring "github_mcp" "il-tmfv" | quote }}
-    }
-  },
   {{- /*
-    postgres-mcp@0.3.0 pins pglast==7.2.0, which is gone from PyPI:
-    https://github.com/crystaldba/postgres-mcp/issues/237
-    --overrides only accepts a file, hence bash process substitution.
     How to add the secret: chezmoi secret keyring set --service=pg_mcp --user=pushsms
   */}}
   "postgres_production": {
