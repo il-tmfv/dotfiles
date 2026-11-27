@@ -27,16 +27,61 @@
     "defaultModel": "zai/glm-5.4",
     "agentOverrides": {
       "scout": {
-        "model": "zai/glm-5.3-flash"
+        "model": "zai/glm-5.3-flash",
+        "tools": [
+          "read", "grep", "find", "ls", "bash", "write", "contact_supervisor",
+          "mcp:postgres_production",
+          "mcp:grafana"
+        ],
+        "excludeTools": [
+          "grafana_add_activity_to_incident",
+          "grafana_alerting_manage_routing",
+          "grafana_alerting_manage_rules",
+          "grafana_create_annotation",
+          "grafana_create_folder",
+          "grafana_create_incident",
+          "grafana_update_annotation",
+          "grafana_update_dashboard"
+        ]
       },
       "researcher": {
         "model": "zai/glm-5.3-flash"
       },
       "worker": {
-        "model": "zai/glm-5.4"
+        "model": "zai/glm-5.4",
+        "tools": [
+          "read", "grep", "find", "ls", "bash", "edit", "write", "contact_supervisor",
+          "mcp:postgres_production",
+          "mcp:grafana"
+        ],
+        "excludeTools": [
+          "grafana_add_activity_to_incident",
+          "grafana_alerting_manage_routing",
+          "grafana_alerting_manage_rules",
+          "grafana_create_annotation",
+          "grafana_create_folder",
+          "grafana_create_incident",
+          "grafana_update_annotation",
+          "grafana_update_dashboard"
+        ]
       },
       "delegate": {
-        "model": "zai/glm-5.4"
+        "model": "zai/glm-5.4",
+        "tools": [
+          "read", "grep", "find", "ls", "bash", "edit", "write", "contact_supervisor",
+          "mcp:postgres_production",
+          "mcp:grafana"
+        ],
+        "excludeTools": [
+          "grafana_add_activity_to_incident",
+          "grafana_alerting_manage_routing",
+          "grafana_alerting_manage_rules",
+          "grafana_create_annotation",
+          "grafana_create_folder",
+          "grafana_create_incident",
+          "grafana_update_annotation",
+          "grafana_update_dashboard"
+        ]
       },
       "reviewer": {
         "model": "zai/glm-5.4",
