@@ -13,13 +13,11 @@
     }
   },
   "yandex-tracker": {
-    "command": "uvx",
-    "args": [
-      "yandex-tracker-mcp@0.11.0"
-    ],
-    "env": {
-      "TRACKER_TOKEN": {{ keyring "ytracker_mcp" "pushsms" | quote }},
-      "TRACKER_CLOUD_ORG_ID": "bpfoigcnihgavqdi7up0"
+    "type": "http",
+    "url": "https://mcp.tracker.yandex.net/mcp",
+    "headers": {
+      "Authorization": {{ printf "OAuth %s" (keyring "ytracker_mcp" "pushsms" | trim) | quote }},
+      "X-Cloud-Org-ID": "bpfoigcnihgavqdi7up0"
     }
   },
   "sentry_project_name": {
