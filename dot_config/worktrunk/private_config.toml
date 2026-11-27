@@ -415,9 +415,6 @@
 #
 # See `wt hook` (https://worktrunk.dev/hook/) for hook types, execution order, template variables, and examples. User hooks apply to all projects; project hooks (https://worktrunk.dev/config/#project-configuration) apply only to that repository.
 
-[pre-start]
-init = "gh stack init {{ branch }}"
-
 [post-start]
 copy = "wt step copy-ignored"
 
