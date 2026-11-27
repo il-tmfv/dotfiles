@@ -14,7 +14,8 @@
     "npm:cc-safety-net",
     "npm:@sting8k/pi-vcc",
     "../../projects/pi-tmfv",
-    "npm:pi-ask-user"
+    "npm:pi-ask-user",
+    "npm:@observal/pi-insights"
   ],
   "defaultTools": [
     "+codemode"
@@ -29,7 +30,13 @@
       "scout": {
         "model": "zai/glm-5.3-flash",
         "tools": [
-          "read", "grep", "find", "ls", "bash", "write", "contact_supervisor",
+          "read",
+          "grep",
+          "find",
+          "ls",
+          "bash",
+          "write",
+          "contact_supervisor",
           "mcp:postgres_production",
           "mcp:grafana"
         ],
@@ -50,7 +57,14 @@
       "worker": {
         "model": "zai/glm-5.4",
         "tools": [
-          "read", "grep", "find", "ls", "bash", "edit", "write", "contact_supervisor",
+          "read",
+          "grep",
+          "find",
+          "ls",
+          "bash",
+          "edit",
+          "write",
+          "contact_supervisor",
           "mcp:postgres_production",
           "mcp:grafana"
         ],
@@ -68,7 +82,14 @@
       "delegate": {
         "model": "zai/glm-5.4",
         "tools": [
-          "read", "grep", "find", "ls", "bash", "edit", "write", "contact_supervisor",
+          "read",
+          "grep",
+          "find",
+          "ls",
+          "bash",
+          "edit",
+          "write",
+          "contact_supervisor",
           "mcp:postgres_production",
           "mcp:grafana"
         ],
