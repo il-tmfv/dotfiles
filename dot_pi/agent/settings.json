@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.6.0",
+  "lastChangelogVersion": "1.6.1",
   "theme": "catppuccin-frappe",
   "packages": [
     "npm:pi-cursor-sdk",
@@ -7,7 +7,6 @@
     "npm:@tmustier/pi-usage-extension",
     "npm:@diegopetrucci/pi-context-inspector",
     "npm:@sherif-fanous/pi-catppuccin",
-    "npm:pi-glm-usage",
     "npm:pi-mcp-adapter",
     "npm:pi-subagents",
     "npm:pi-web-access",
@@ -24,7 +23,6 @@
   "defaultProvider": "zai",
   "defaultModel": "glm-5.4",
   "hideThinkingBlock": true,
-  "showCacheMissNotices": true,
   "subagents": {
     "defaultModel": "zai/glm-5.4",
     "agentOverrides": {
@@ -77,7 +75,7 @@
     }
   },
   "extensionChangelogVersions": {
-    "{\"source\":\"npm:pi-cursor-sdk\",\"scope\":\"user\"}": "0.5.46",
+    "{\"source\":\"npm:pi-cursor-sdk\",\"scope\":\"user\"}": "0.5.47",
     "{\"source\":\"npm:@tmustier/pi-ralph-wiggum\",\"scope\":\"user\"}": "0.2.5",
     "{\"source\":\"npm:@tmustier/pi-usage-extension\",\"scope\":\"user\"}": "0.10.2",
     "{\"source\":\"npm:pi-mcp-adapter\",\"scope\":\"user\"}": "7.0.1",
@@ -89,5 +87,11 @@
   },
   "extensions": [
     "-builtin:mcp"
-  ]
+  ],
+  "notices": {
+    "cacheMisses": true,
+    "cacheWarming": true,
+    "compactionCosts": true,
+    "reasoningDrops": true
+  }
 }
